@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="从SQL注入说起项目组来了一个需求，对IIS6的SQL注入进行日志检测。 何为SQL注入？ SQL注入即是指web应用程序对用户输入数据的合法性没有判断或过滤不严，攻击者可以在web应用程序中事先定义好的查询语句的结尾上添加额外的SQL语句，在管理员不知情的情况下实现非法操作，以此来实现欺骗数据库服务器执行非授权的任意查询，从而进一步得到相应的数据信息。  举个例子这是一段php的代码 1$sql">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-09T11:52:42.227Z">
+<meta property="og:updated_time" content="2019-11-09T12:03:49.674Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
@@ -229,6 +229,16 @@
 <li><p>此时会提示“数据库连接成功！您被SQL注入！”</p>
 </li>
 </ol>
+<h2 id="其他配置的补充"><a href="#其他配置的补充" class="headerlink" title="其他配置的补充"></a>其他配置的补充</h2><h3 id="自配置php"><a href="#自配置php" class="headerlink" title="自配置php"></a>自配置php</h3><ol>
+<li>添加环境变量，如C:\xampp\php。测试标准为php -v成功输出。</li>
+<li>打开php文件夹下的php.ini。搜索extension_dir = “ext”，删除前面的;，并将exc修改为你的PHP根目录下的php/ext目录，我这里修改为：extension_dir = “C:\xampp\php\ext”。</li>
+<li>搜索;extension=mysqli和;extension=pdo_mysql。删除前面的；来开启mysql的连接。</li>
+<li>保存文件，重启Apache，如果没有报错则继续。</li>
+<li>在C:\xampp\htdocs下面新建phpinfo.php，插入代码 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php phpinfo();?&gt;</span><br></pre></td></tr></table></figure></li>
+<li>浏览器访问 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8009/phpinfo.php</span><br></pre></td></tr></table></figure>
+ 其中8009应该为您电脑Apache的端口。</li>
+<li>若成功显示则配置成功。</li>
+</ol>
 <h1 id="说回SQL注入"><a href="#说回SQL注入" class="headerlink" title="说回SQL注入"></a>说回SQL注入</h1><p>几年前，很多影视网站泄露VIP会员密码大多就是通过WEB表单递交查询字符暴出的。既然SQL注入这么恐怖，那我们应该怎么对应呢？</p>
 <h2 id="对应"><a href="#对应" class="headerlink" title="对应"></a>对应</h2><ol>
 <li>使用正则表达式或者特定字符如“-”，对输入的语句进行转换</li>
@@ -394,7 +404,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从SQL注入说起"><span class="toc-number">1.</span> <span class="toc-text">从SQL注入说起</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#何为SQL注入？"><span class="toc-number">1.1.</span> <span class="toc-text">何为SQL注入？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#举个例子"><span class="toc-number">1.2.</span> <span class="toc-text">举个例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自学SQL注入"><span class="toc-number">2.</span> <span class="toc-text">自学SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建环境"><span class="toc-number">2.1.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql方面配置"><span class="toc-number">2.2.</span> <span class="toc-text">mysql方面配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apache-php方面配置"><span class="toc-number">2.3.</span> <span class="toc-text">Apache+php方面配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#说回SQL注入"><span class="toc-number">3.</span> <span class="toc-text">说回SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对应"><span class="toc-number">3.1.</span> <span class="toc-text">对应</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#完"><span class="toc-number">4.</span> <span class="toc-text">完</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从SQL注入说起"><span class="toc-number">1.</span> <span class="toc-text">从SQL注入说起</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#何为SQL注入？"><span class="toc-number">1.1.</span> <span class="toc-text">何为SQL注入？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#举个例子"><span class="toc-number">1.2.</span> <span class="toc-text">举个例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自学SQL注入"><span class="toc-number">2.</span> <span class="toc-text">自学SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建环境"><span class="toc-number">2.1.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql方面配置"><span class="toc-number">2.2.</span> <span class="toc-text">mysql方面配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Apache-php方面配置"><span class="toc-number">2.3.</span> <span class="toc-text">Apache+php方面配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他配置的补充"><span class="toc-number">2.4.</span> <span class="toc-text">其他配置的补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自配置php"><span class="toc-number">2.4.1.</span> <span class="toc-text">自配置php</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#说回SQL注入"><span class="toc-number">3.</span> <span class="toc-text">说回SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对应"><span class="toc-number">3.1.</span> <span class="toc-text">对应</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#完"><span class="toc-number">4.</span> <span class="toc-text">完</span></a></li></ol>
                     </div>
                 </span>
             </div>
