@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="从SQL注入说起项目组来了一个需求，对IIS6的SQL注入进行日志检测。 何为SQL注入？ SQL注入即是指web应用程序对用户输入数据的合法性没有判断或过滤不严，攻击者可以在web应用程序中事先定义好的查询语句的结尾上添加额外的SQL语句，在管理员不知情的情况下实现非法操作，以此来实现欺骗数据库服务器执行非授权的任意查询，从而进一步得到相应的数据信息。  举个例子这是一段php的代码 1$sql">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-09T11:50:01.497Z">
+<meta property="og:updated_time" content="2019-11-09T11:52:42.227Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
@@ -210,7 +210,7 @@
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">`id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">`username` varchar(64) NOT NULL,</span><br><span class="line">`password` varchar(64) NOT NULL,</span><br><span class="line">`email` varchar(64) NOT NULL,</span><br><span class="line">PRIMARY KEY (`id`),</span><br><span class="line">UNIQUE KEY `username` (`username`)</span><br><span class="line">) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>插入信息</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO users (username,password,email)</span><br><span class="line">VALUES(&apos;MarcoFly&apos;,md5(&apos;test&apos;),&apos;marcofly@test.com&apos;);</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO users (username,password,email)</span><br><span class="line">VALUES(&apos;MarcoFly&apos;,&apos;test&apos;,&apos;marcofly@test.com&apos;);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
