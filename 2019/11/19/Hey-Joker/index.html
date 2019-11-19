@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zyhhhy.github.io">
-  <title>Winserver2003上IIS6配置SQL注入 | 周耀海的博客</title>
+  <title>Hey, Joker! | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="准备动作1.在winserver2003上安装xampp经测试可以直接在winserver2003上安装xampp1.8.2版本并且正常运行 附下载网站： https:&#x2F;&#x2F;sourceforge.net&#x2F;projects&#x2F;xampp&#x2F;files&#x2F;XAMPP%20Windows&#x2F;1.8.2&#x2F; 2.调试xampp 开启xampp，点击start打开mysql。 点击Apache右边的config选择A">
-<meta name="keywords" content="技术">
+  <meta name="description" content="Hey, Joker! It’s not a joke!">
+<meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Winserver2003上IIS6配置SQL注入">
-<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;13&#x2F;Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5&#x2F;index.html">
+<meta property="og:title" content="Hey, Joker!">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;19&#x2F;Hey-Joker&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
-<meta property="og:description" content="准备动作1.在winserver2003上安装xampp经测试可以直接在winserver2003上安装xampp1.8.2版本并且正常运行 附下载网站： https:&#x2F;&#x2F;sourceforge.net&#x2F;projects&#x2F;xampp&#x2F;files&#x2F;XAMPP%20Windows&#x2F;1.8.2&#x2F; 2.调试xampp 开启xampp，点击start打开mysql。 点击Apache右边的config选择A">
+<meta property="og:description" content="Hey, Joker! It’s not a joke!">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T09:54:38.308Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;19&#x2F;Hey-Joker&#x2F;1.jfif">
+<meta property="og:updated_time" content="2019-11-19T01:56:17.329Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;19&#x2F;Hey-Joker&#x2F;1.jfif">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -155,20 +157,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Winserver2003上IIS6配置SQL注入" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hey-Joker" class="article article-type-post " itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 class="article-title" itemprop="name">
-      Winserver2003上IIS6配置SQL注入
+      Hey, Joker!
     </h1>
   
 
                     
-                        <a href="/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/" class="archive-article-date">
-  	<time datetime="2019-11-13T08:18:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+                        <a href="/2019/11/19/Hey-Joker/" class="archive-article-date">
+  	<time datetime="2019-11-19T00:57:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
 </a>
                             
                                 
@@ -180,70 +182,11 @@
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <h1 id="准备动作"><a href="#准备动作" class="headerlink" title="准备动作"></a>准备动作</h1><h2 id="1-在winserver2003上安装xampp"><a href="#1-在winserver2003上安装xampp" class="headerlink" title="1.在winserver2003上安装xampp"></a>1.在winserver2003上安装xampp</h2><p>经测试可以直接在winserver2003上安装xampp1.8.2版本并且正常运行</p>
-<p>附下载网站：</p>
-<p><a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.2/" target="_blank" rel="noopener">https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/1.8.2/</a></p>
-<h2 id="2-调试xampp"><a href="#2-调试xampp" class="headerlink" title="2.调试xampp"></a>2.调试xampp</h2><ol>
-<li>开启xampp，点击start打开mysql。</li>
-<li>点击Apache右边的config选择Apache(httpd.conf)，修改里面的Listen 80改为Listen 8010。</li>
-<li>在同一个config下选择Apache(httpd-ssl.conf)，修改里面的Listen 443改为Listen 4431</li>
-<li>点击start开启Apache</li>
-<li>添加php的环境变量，如我的是C:\xampp\php<a id="more"></a>
-<h2 id="3-调试mysql"><a href="#3-调试mysql" class="headerlink" title="3.调试mysql"></a>3.调试mysql</h2>在mysql里面创建表<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">`id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">`username` varchar(64) NOT NULL,</span><br><span class="line">`password` varchar(64) NOT NULL,</span><br><span class="line">`email` varchar(64) NOT NULL,</span><br><span class="line">PRIMARY KEY (`id`),</span><br><span class="line">UNIQUE KEY `username` (`username`)</span><br><span class="line">) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;</span><br></pre></td></tr></table></figure>
-插入信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO users (username,password,email)</span><br><span class="line">VALUES(&apos;MarcoFly&apos;,&apos;test&apos;,&apos;marcofly@test.com&apos;);</span><br></pre></td></tr></table></figure>
-<h2 id="3-新建PHP文件"><a href="#3-新建PHP文件" class="headerlink" title="3.新建PHP文件"></a>3.新建PHP文件</h2>在C:\xampp\htdocs(xampp安装目录)下新建validate.php文件</li>
-</ol>
-<p>输入以下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;登录验证&lt;/title&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;validate.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        &lt;fieldset&gt;</span><br><span class="line">            &lt;legend&gt;Sql Injection&lt;/legend&gt;</span><br><span class="line">            &lt;table&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;username:&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;password&amp;nbsp;&amp;nbsp;:&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;reset&quot; value=&quot;reset&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/table&gt;</span><br><span class="line">        &lt;/fieldset&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">       $servername = &quot;localhost&quot;;</span><br><span class="line">       $username = &quot;root&quot;;</span><br><span class="line">       $password = &quot;&quot;;</span><br><span class="line">       $database=&apos;injection&apos;;</span><br><span class="line"></span><br><span class="line">       $conn=mysqli_connect($servername,$username,$password,$database) or die(&apos;Database connect failed!&apos;);</span><br><span class="line"></span><br><span class="line">       $name=$_POST[&apos;username&apos;];</span><br><span class="line"></span><br><span class="line">       $pwd=$_POST[&apos;password&apos;];</span><br><span class="line"></span><br><span class="line">       $sql=&quot;select * from users where username=&apos;$name&apos; and password=&apos;$pwd&apos;&quot;;</span><br><span class="line"></span><br><span class="line">       $query=mysqli_query($conn,$sql);</span><br><span class="line"></span><br><span class="line">       $arr=mysqli_fetch_array($query);</span><br><span class="line"></span><br><span class="line">       if(is_array($arr))&#123;</span><br><span class="line"></span><br><span class="line">               echo &quot;Database connect success! You are SQL injected!&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;else&#123;</span><br><span class="line"></span><br><span class="line">              echo &quot;Please enter the right username and password!&lt;a href=\&quot;Login.php\&quot;&gt;Please login again!&lt;/a&gt;&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="4-访问PHP文件"><a href="#4-访问PHP文件" class="headerlink" title="4.访问PHP文件"></a>4.访问PHP文件</h2><p>打开浏览器，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8010/validate.php</span><br></pre></td></tr></table></figure>
-<h2 id="5-测试SQL注入"><a href="#5-测试SQL注入" class="headerlink" title="5.测试SQL注入"></a>5.测试SQL注入</h2><p>在username一栏里面输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or 1=1#</span><br></pre></td></tr></table></figure>
-<p>如果输出Database connect success! You are SQL injected! 则被SQL注入</p>
-<h1 id="IIS6配置php文件"><a href="#IIS6配置php文件" class="headerlink" title="IIS6配置php文件"></a>IIS6配置php文件</h1><h2 id="1-下载并安装IIS-FastCGI"><a href="#1-下载并安装IIS-FastCGI" class="headerlink" title="1.下载并安装IIS FastCGI"></a>1.下载并安装IIS FastCGI</h2><p>下载地址：</p>
-<p><a href="http://www.iis.net/download/fastcgi" target="_blank" rel="noopener">http://www.iis.net/download/fastcgi</a></p>
-<p>选择 x86或者download x86，下载下来名称为 fcgisetup_1.5_rtw_x86.msi。安装后会在C:\WINDOWS\system32\inetsrv\目录下多出了5个文件fcgiconfig.js,fcgiext.dll,fcgiext.ini,fcgilicense.rtf,fcgireadme.htm<br>这个时候在IIS6的”WEB服务扩展”里就多出了一个FastCGI Handler</p>
-<h2 id="2-注册PHP到FastCGI"><a href="#2-注册PHP到FastCGI" class="headerlink" title="2.注册PHP到FastCGI"></a>2.注册PHP到FastCGI</h2><p>打开C:\WINDOWS\system32\inetsrv\fcgiext.ini文件，在文件最后加上下面的语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Types](此行为源文件自带部分)</span><br><span class="line">php=PHP</span><br><span class="line"></span><br><span class="line">[PHP]</span><br><span class="line">ExePath=C:\xampp\php\php-cgi.exe</span><br><span class="line">InstanceMaxRequests=10000</span><br><span class="line">ActivityTimeout=600</span><br><span class="line">RequestTimeout=600</span><br><span class="line">EnvironmentVars=PHP_FCGI_MAX_REQUESTS:10000,PHPRC:C:\xampp\php\</span><br></pre></td></tr></table></figure>
-<h2 id="3-修改PHP的探针"><a href="#3-修改PHP的探针" class="headerlink" title="3.修改PHP的探针"></a>3.修改PHP的探针</h2><p>修改路径为C:\xampp\php\php.ini里面的</p>
-<p>short_open_tag = Off</p>
-<p>改为</p>
-<p>short_open_tag = On</p>
-<h2 id="4-配置IIS6拓展-php文件"><a href="#4-配置IIS6拓展-php文件" class="headerlink" title="4.配置IIS6拓展.php文件"></a>4.配置IIS6拓展.php文件</h2><p>打开IIS6管理界面，右键Default Web Site，选择properties，选择Home Directory，选择Configuration，点击Add</p>
-<p>Executable选择C:\WINDOWS\system32\inetsrv\fcgiext.dll</p>
-<p>Extension填写.php</p>
-<p>Limit to填写GET,HEAD,POST</p>
-<p>在properties里面选择Documents，点击Add</p>
-<p>添加validate.php，并且将validate.php复制到IIS6根目录下，我的是C:\Inetpub\wwwroot</p>
-<h2 id="5-网页访问"><a href="#5-网页访问" class="headerlink" title="5.网页访问"></a>5.网页访问</h2><p>本机访问<a href="http://localhost/validate.php，或者其他其他机器访问http://192.168.233.132/validate.php，其中192.168.233.132为本机的IP" target="_blank" rel="noopener">http://localhost/validate.php，或者其他其他机器访问http://192.168.233.132/validate.php，其中192.168.233.132为本机的IP</a></p>
-<h2 id="6-IIS6日志调研"><a href="#6-IIS6日志调研" class="headerlink" title="6.IIS6日志调研"></a>6.IIS6日志调研</h2><ol>
-<li>第一次输入账号密码</li>
-</ol>
-<p>a）    输入错误账号密码</p>
-<p>username: dfa</p>
-<p>password: 123</p>
-<p>b）    IIS6日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:46:51 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1097 453 15</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>第二次输入账号密码</li>
-</ol>
-<p>a)    输入SQL注入账号</p>
-<p>username: ‘ or 1 = 1#</p>
-<p>password: 123</p>
-<p>b)    IIS6日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:47:52 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1056 468 15</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>第三次输入账号密码</li>
-</ol>
-<p>a)    输入正确账号密码</p>
-<p>username: MarcoFly</p>
-<p>password: test</p>
-<p>b)    IIS6日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:49:11 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1056 460 15</span><br></pre></td></tr></table></figure>
-<h1 id="初步结论"><a href="#初步结论" class="headerlink" title="初步结论"></a>初步结论</h1><p>无论是否输入正确和错误账号密码，还是输入SQL注入信息，IIS6给出的日志都是几乎一样无法分辨的，那么可以初步断定无法通过日志对IIS6是否被SQL注入进行检查。</p>
-<h1 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h1><p><a href="https://www.jb51.net/article/31384.htm" target="_blank" rel="noopener">https://www.jb51.net/article/31384.htm</a></p>
-<p><a href="https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/">https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/</a></p>
-<h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1>
+                                        <h1 id="Hey-Joker-It’s-not-a-joke"><a href="#Hey-Joker-It’s-not-a-joke" class="headerlink" title="Hey, Joker! It’s not a joke!"></a>Hey, Joker! It’s not a joke!</h1><p><img src="/2019/11/19/Hey-Joker/1.jfif" alt="Joker"></p>
+<a id="more"></a>
+<h2 id="总片全览"><a href="#总片全览" class="headerlink" title="总片全览"></a>总片全览</h2><p>生活的压力总是让你痛不欲生。面对观众，面对生活中的所有人，你期待他们发笑，可是事与愿违；而面对自己，你却难以抑制自己身体上莫名狂笑的病。在面具下的伪装是一张原本善良又可爱的脸。当你戴上面具你才发现，这个社会真的人人为敌，处处为壁。纵使暴力，纵使轻狂，这只是社会舞台的余光照在我脸上的投影，落幕后，我只会发笑，只能发笑，发笑到身亡。<br>这是一部小人物从善到恶的一步步进化史，与《黑暗骑士》里面冷酷理智到极点的希斯莱杰小丑不同，菲尼克斯饰演的小丑只是一个社会底层的小人物。没有婚姻，没有好工作，只有一位年迈的母亲等着他照顾。他的使命是为人类带来快乐，即使他活得几乎没有快乐可言。<br>关于Arthur母亲，本来以为是一场《雷雨》的续集，没想到，编剧剧情一转甩了一句话，这都9012年了，社会的贫富差距已经大到富人和穷人不可能有交集，更不可能有后代。接下来的剧情更加让人心寒，Arthur一直关心照顾的母亲原来抱养并且一直虐待Arthur，这也让他患上了一种情不自禁狂笑的病。<br>从Arthur拿到枪那一刻起，他就从暴力的受害者变为了施害者。三个Thomas Wayne公司的职员、Penny Fleck、Randall还有Murray。从陌生人到熟人，到至亲，再到偶像。这是一个人社会观的彻底崩塌和情感无所寄托的集中表现。<br>影片的最后带给我们一场社会的暴乱和对“正面角色”的集中反攻。人们带上小丑的面具，点燃心中的恶，把社会丢到火葬场中间。Thomas Wayne被杀，资本家时代被终结。可是我不禁要问，小丑究竟带给这个社会什么呢？是为了暴乱而暴乱的冲动还是刻意洗牌社会阶层的谋划，不管是其中哪一个，我都觉得这不正义不道德。<br>也许受国内电影大团圆结局的影响，我觉得好的电影结局要么是正义重现，比如合法镇压暴乱；要么是革命起义成功。而影片的最后小丑被拘捕，可是这个社会呢？因他而乱的社会呢？<br>I just hope my death makes more cents than my life.<br>这是小丑笔记本上的一段话，也许有意义吧，就像这样的人生，也许有意义吧。</p>
+<h2 id="从无端的争执到不断的争执"><a href="#从无端的争执到不断的争执" class="headerlink" title="从无端的争执到不断的争执"></a>从无端的争执到不断的争执</h2><p>一开始暴力与鄙夷仿佛只是社会下层人民习以为常的生活方式，与之相对应的社会精英资本家Thomas Wayne只需要用唇枪舌剑和兜里有钱就把所有反对他的市民抵挡在门外。<br>从街上小混混以捉弄、取笑、殴打Arthur开始，到公交车上黑人母亲指责Arthur骚扰自己的儿子，再到三个Thomas Wayne公司的高级员工在地铁上对因病发笑的Arthur殴打，一切的暴力与争执都发生地愈加过火、愈加惨痛。</p>
+
                                             
                                                 
                                                     
@@ -256,7 +199,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    https://zyhhhy.github.io/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/
+                                                                                    https://zyhhhy.github.io/2019/11/19/Hey-Joker/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -303,7 +246,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -359,7 +302,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2019/11/19/Hey-Joker/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -373,18 +316,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/11/13/%E4%B8%89%E7%BA%A7%E8%AE%A1%E7%BD%91-%E5%8F%AA%E6%9C%89%E8%89%AF%E5%A5%BD/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          三级计网-只有良好
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">从SQL注入说起</div>
+    <a href="/2019/11/13/%E4%B8%89%E7%BA%A7%E8%AE%A1%E7%BD%91-%E5%8F%AA%E6%9C%89%E8%89%AF%E5%A5%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">三级计网-只有良好</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -411,7 +345,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#准备动作"><span class="toc-number">1.</span> <span class="toc-text">准备动作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-在winserver2003上安装xampp"><span class="toc-number">1.1.</span> <span class="toc-text">1.在winserver2003上安装xampp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-调试xampp"><span class="toc-number">1.2.</span> <span class="toc-text">2.调试xampp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-调试mysql"><span class="toc-number">1.3.</span> <span class="toc-text">3.调试mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-新建PHP文件"><span class="toc-number">1.4.</span> <span class="toc-text">3.新建PHP文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-访问PHP文件"><span class="toc-number">1.5.</span> <span class="toc-text">4.访问PHP文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-测试SQL注入"><span class="toc-number">1.6.</span> <span class="toc-text">5.测试SQL注入</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IIS6配置php文件"><span class="toc-number">2.</span> <span class="toc-text">IIS6配置php文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-下载并安装IIS-FastCGI"><span class="toc-number">2.1.</span> <span class="toc-text">1.下载并安装IIS FastCGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-注册PHP到FastCGI"><span class="toc-number">2.2.</span> <span class="toc-text">2.注册PHP到FastCGI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-修改PHP的探针"><span class="toc-number">2.3.</span> <span class="toc-text">3.修改PHP的探针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-配置IIS6拓展-php文件"><span class="toc-number">2.4.</span> <span class="toc-text">4.配置IIS6拓展.php文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-网页访问"><span class="toc-number">2.5.</span> <span class="toc-text">5.网页访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-IIS6日志调研"><span class="toc-number">2.6.</span> <span class="toc-text">6.IIS6日志调研</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初步结论"><span class="toc-number">3.</span> <span class="toc-text">初步结论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考网站"><span class="toc-number">4.</span> <span class="toc-text">参考网站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#完"><span class="toc-number">5.</span> <span class="toc-text">完</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hey-Joker-It’s-not-a-joke"><span class="toc-number">1.</span> <span class="toc-text">Hey, Joker! It’s not a joke!</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#总片全览"><span class="toc-number">1.1.</span> <span class="toc-text">总片全览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从无端的争执到不断的争执"><span class="toc-number">1.2.</span> <span class="toc-text">从无端的争执到不断的争执</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
