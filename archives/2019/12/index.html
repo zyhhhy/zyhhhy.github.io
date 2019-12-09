@@ -6,20 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zyhhhy.github.io">
-  <title>跨站脚本攻击XSS调研 | 周耀海的博客</title>
+  <title>Archives: 2019/12 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="跨站脚本攻击XSS调研一、    XSS概念跨站脚本攻击XSS（Cross Site Scripting），为了与CSS（层叠样式表）区分，故作XSS。  百度百科：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、Active">
-<meta name="keywords" content="技术">
-<meta property="og:type" content="article">
-<meta property="og:title" content="跨站脚本攻击XSS调研">
-<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="周耀海的博客">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
-<meta property="og:description" content="跨站脚本攻击XSS调研一、    XSS概念跨站脚本攻击XSS（Cross Site Scripting），为了与CSS（层叠样式表）区分，故作XSS。  百度百科：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、Active">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;1.png">
-<meta property="og:updated_time" content="2019-11-21T08:41:44.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -158,168 +152,36 @@
                                 <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
                             </div>
                             <div id="js-content" class="content-ll">
-                                <article id="post-跨站脚本攻击XSS调研" class="article article-type-post " itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+                                
   
-    <h1 class="article-title" itemprop="name">
-      跨站脚本攻击XSS调研
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/12/09/%E5%9F%BA%E4%BA%8EPCA%E7%9A%84%E7%BB%8F%E6%B5%8E%E7%8A%B6%E5%86%B5%E6%8E%92%E5%90%8D%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2019-12-09T09:31:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/09/%E5%9F%BA%E4%BA%8EPCA%E7%9A%84%E7%BB%8F%E6%B5%8E%E7%8A%B6%E5%86%B5%E6%8E%92%E5%90%8D%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/">基于PCA的经济状况排名问题求解</a>
     </h1>
   
 
-                    
-                        <a href="/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/" class="archive-article-date">
-  	<time datetime="2019-11-21T08:28:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-                            
-                                
-                                    <span class="archive-article-date">
-                                    阅读量 <span id="busuanzi_value_page_pv"></span>
-                                    </span>
-                                    
-            </header>
-            
-                <div class="article-entry" itemprop="articleBody">
-                    
-                                        <h1 id="跨站脚本攻击XSS调研"><a href="#跨站脚本攻击XSS调研" class="headerlink" title="跨站脚本攻击XSS调研"></a>跨站脚本攻击XSS调研</h1><h2 id="一、-XSS概念"><a href="#一、-XSS概念" class="headerlink" title="一、    XSS概念"></a>一、    XSS概念</h2><p>跨站脚本攻击XSS（Cross Site Scripting），为了与CSS（层叠样式表）区分，故作XSS。</p>
-<blockquote>
-<p>百度百科：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、ActiveX、 Flash 或者甚至是普通的HTML。攻击成功后，攻击者可能得到包括但不限于更高的权限（如执行一些操作）、私密网页内容、会话和cookie等各种内容。</p>
-</blockquote>
-<p>XSS可以分为反射型XSS、存储型XSS和DOM型XSS</p>
-<a id="more"></a>
-<h2 id="二、-简单XSS配置"><a href="#二、-简单XSS配置" class="headerlink" title="二、    简单XSS配置"></a>二、    简单XSS配置</h2><ol>
-<li><p>IIS6+PHP+mysql配置情况</p>
-<p>a)    在IIS6中添加.php文件为可执行文件</p>
-</li>
-</ol>
-<p><img src="/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/1.png" alt="IIS6"></p>
-<pre><code>b)    在mysql里面创建表xss
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `xss` (</span><br><span class="line">`id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">`name` varchar(64) NOT NULL,</span><br><span class="line">PRIMARY KEY (`id`),</span><br><span class="line">UNIQUE KEY `name` (`name`)</span><br><span class="line">) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;</span><br></pre></td></tr></table></figure></code></pre><ol start="2">
-<li><p>反射型XSS</p>
-<p>a)    在IIS6根目录下创建1.html和action.php模仿反射型XSS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//前端 1.html：</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;反射型XSS&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=&quot;action.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//后端 action.php：</span><br><span class="line">&lt;?php</span><br><span class="line">$name=$_POST[&quot;name&quot;]; </span><br><span class="line">    echo $name;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>b)    本机访问<a href="http://localhost/1.html,或者其他其他机器访问http://192.168.233.132/1.html，其中192.168.233.132为本机的IP" target="_blank" rel="noopener">http://localhost/1.html,或者其他其他机器访问http://192.168.233.132/1.html，其中192.168.233.132为本机的IP</a></p>
-<p>c)    输入 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(&apos;hack&apos;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>d)    页面弹出对话框‘hack’，完成反射型XSS。数据流向为前端-&gt;后端-&gt;前端</p>
-</li>
-<li><p>存储型XSS</p>
-<p>a)    在IIS6根目录下创建2.html和action2.php模仿存储型XSS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//前端：2.html</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;存储型XSS&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=&quot;action2.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        输入你的ID： &lt;input type=&quot;text&quot; name=&quot;id&quot; /&gt; &lt;br/&gt; 输入你的Name：</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt; &lt;br/&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//后端：action2.php</span><br><span class="line">&lt;?php</span><br><span class="line">    $servername = &quot;localhost&quot;;</span><br><span class="line">    $username = &quot;root&quot;;</span><br><span class="line">    $password = &quot;123456&quot;;</span><br><span class="line">    $database=&apos;test&apos;;</span><br><span class="line"></span><br><span class="line">    // 创建连接</span><br><span class="line">    $conn=mysqli_connect($servername,$username,$password,$database) or die(&apos;Database connect failed!&apos;);</span><br><span class="line"></span><br><span class="line">    $id=$_POST[&quot;id&quot;];</span><br><span class="line">    $name=$_POST[&quot;name&quot;];</span><br><span class="line">    </span><br><span class="line">    $sql=&quot;insert into xss value ($id,&apos;$name&apos;)&quot;;</span><br><span class="line">    $res = $conn-&gt;query($sql);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>注：其中servername、username、password和database应该为本机mysql的各项参数</p>
-<p>b)    本机访问<a href="http://localhost/2.html,或者其他其他机器访问http://192.168.233.132/2.html，其中192.168.233.132为本机的IP" target="_blank" rel="noopener">http://localhost/2.html,或者其他其他机器访问http://192.168.233.132/2.html，其中192.168.233.132为本机的IP</a></p>
-<p>c)    输入</p>
-<p>输入你的ID：1</p>
-<p>输入你的Name：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(\&apos;hack\&apos;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>注：此处hack单引号要进行转义，因为sql语句中的$name是单引号的，不转义的话就会提前结束sql语句，使其输入不进数据库。</p>
-<p>d)    本机访问<a href="http://localhost/show2.php,或者其他其他机器访问http://192.168.233.132/" target="_blank" rel="noopener">http://localhost/show2.php,或者其他其他机器访问http://192.168.233.132/</a> show2.php，其中192.168.233.132为本机的IP</p>
-<p>e)    页面弹出对话框显示‘hack’，存储型XSS完成，数据流向前端-&gt;后端-&gt;数据库-&gt;后端-&gt;前端。</p>
-</li>
-</ol>
-<h2 id="三、-防止XSS攻击"><a href="#三、-防止XSS攻击" class="headerlink" title="三、    防止XSS攻击"></a>三、    防止XSS攻击</h2><ol>
-<li><p>区分大小写过滤标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//后端 action4.php：</span><br><span class="line">&lt;?php</span><br><span class="line">$name=$_POST[&quot;name&quot;]; </span><br><span class="line">if($name!=null)&#123;</span><br><span class="line">    $name=preg_replace(&quot;/&lt;script&gt;/&quot;,&quot;&quot;,$name);      //过滤&lt;script&gt;</span><br><span class="line">    $name=preg_replace(&quot;/&lt;\/script&gt;/&quot;,&quot;&quot;,$name);   //过滤&lt;/script&gt;</span><br><span class="line">    echo $name; </span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-
-<p>反防御：</p>
-<p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scripT&gt;alert(&apos;hack&apos;)&lt;/scripT&gt;</span><br></pre></td></tr></table></figure>
-<p>绕过大小写过滤</p>
-</li>
-<li><p>不区分大小写过滤标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//后端 action4.php：</span><br><span class="line">&lt;?php</span><br><span class="line">$name=$_POST[&quot;name&quot;]; </span><br><span class="line">if($name!=null)&#123;</span><br><span class="line">$name=preg_replace(&quot;/&lt;script&gt;/i&quot;,&quot;&quot;,$name);    //不区分大小写过滤 &lt;script&gt;</span><br><span class="line">$name=preg_replace(&quot;/&lt;\/script&gt;/i&quot;,&quot;&quot;,$name);  //不区分大小写过滤 &lt;/script&gt;</span><br><span class="line">    echo $name; </span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>反防御：</p>
-<p>输入嵌套script标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scr&lt;script&gt;ipt&gt;alert(&apos;hack&apos;)&lt;/scr&lt;/script&gt;ipt&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对输入进行html编码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    $name = htmlspecialchars( $_POST[ &apos;name&apos; ] );</span><br><span class="line">    echo $name;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></li>
-<li><p>设置Cookie的HTTP only属性，JS脚本不能获取Cookie信息</p>
-</li>
-</ol>
-<h2 id="四、-XSS攻击后的IIS6日志"><a href="#四、-XSS攻击后的IIS6日志" class="headerlink" title="四、    XSS攻击后的IIS6日志"></a>四、    XSS攻击后的IIS6日志</h2><ol>
-<li>反射型XSS</li>
-</ol>
-<p>2019-11-21 07:27:32 W3SVC1 SXF-GJIC6CP9RLM 192.168.233.132 GET /1.html - 80 - 192.168.233.1 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/78.0.3904.97+Safari/537.36 - - 192.168.233.132 200 0 0 519 422 31</p>
-<p>2019-11-21 07:27:42 W3SVC1 SXF-GJIC6CP9RLM 192.168.233.132 POST /action.php - 80 - 192.168.233.1 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/78.0.3904.97+Safari/537.36 - <a href="http://192.168.233.132/1.html" target="_blank" rel="noopener">http://192.168.233.132/1.html</a> 192.168.233.132 200 0 0 212 647 46</p>
-<p>分析：状态码均为200，无法分辨反射型XSS</p>
-<ol start="2">
-<li>存储型XSS</li>
-</ol>
-<p>2019-11-21 07:27:46 W3SVC1 SXF-GJIC6CP9RLM 192.168.233.132 GET /2.html - 80 - 192.168.233.1 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/78.0.3904.97+Safari/537.36 - - 192.168.233.132 200 0 0 593 422 31</p>
-<p>2019-11-21 07:28:07 W3SVC1 SXF-GJIC6CP9RLM 192.168.233.132 POST /action2.php - 80 - 192.168.233.1 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/78.0.3904.97+Safari/537.36 - <a href="http://192.168.233.132/2.html" target="_blank" rel="noopener">http://192.168.233.132/2.html</a> 192.168.233.132 200 0 0 183 659 46</p>
-<p>2019-11-21 07:28:12 W3SVC1 SXF-GJIC6CP9RLM 192.168.233.132 GET /show2.php - 80 - 192.168.233.1 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/78.0.3904.97+Safari/537.36 - - 192.168.233.132 200 0 0 212 425 46</p>
-<p>分析：状态码均为200，无法分辨存储型XSS</p>
-<h2 id="五、-小结"><a href="#五、-小结" class="headerlink" title="五、    小结"></a>五、    小结</h2><p>经初步分析我们可以发现IIS6对于XSS攻击没有有效的防御，因为IIS6是中间件，只能完成客户端到服务器的请求、反馈等等，不能对数据进行审查核实。</p>
-<p>我们平时写网页的时候要注意对用户的输入进行html转换，尤其涉及评论区部分。在与用户交互的过程中，数据库的安全非常重要。常见的网站攻击还包括SQL注入，具体信息可以参看下面的参考网站。</p>
-<h2 id="六、-参考网站"><a href="#六、-参考网站" class="headerlink" title="六、    参考网站"></a>六、    参考网站</h2><ol>
-<li><p>XSS(跨站脚本攻击)详解</p>
-<p><a href="https://blog.csdn.net/qq_36119192/article/details/82469035" target="_blank" rel="noopener">https://blog.csdn.net/qq_36119192/article/details/82469035</a></p>
-</li>
-<li><p>从SQL注入说起</p>
-<p><a href="https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/">https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/</a></p>
-</li>
-</ol>
-
-                                            
-                                                
-                                                    
-                                                        
-                                                            <div>
-                                                                <blockquote>
-                                                                    <strong>本文作者：</strong>
-                                                                    
-                                                                        Edison
-                                                                            
-                                                                                    <br>
-                                                                                    <strong>本文链接：</strong>
-                                                                                    https://zyhhhy.github.io/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/
-                                                                                        <br>
-                                                                                        <strong>版权声明：</strong> 本作品采用
-                                                                                        <a rel="license" href="">
-                                                                                            
-                                                                                        </a>
-                                                                                        进行许可。转载请注明出处！
-                                                                                        
-                                                                </blockquote>
-
-                                                                
-                                                                    <hr>
-                                                                    <center><strong></strong></center>
-                                                                    <hr>
-                                                            </div>
-                                                            
-                                                                    
-                                                                        <div class="page-reward">
-                                                                            <a href="javascript:;" class="page-reward-btn tooltip-top">
-                                                                                <div class="tooltip tooltip-east">
-                                                                                    <span class="tooltip-item">
-              赏
-            </span>
-                                                                                    <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                                                                                    
-                                                                        </div>
-                                                                        </span>
-                                                                        </span>
-                                                                        </span>
-                </div>
-                </a>
-    </div>
-    
-        </div>
-        <div class="article-info article-info-index">
-            
-                    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -331,150 +193,21 @@
 		</ul>
 	</div>
 
-                        
+          
 
-                            
-
-                                    
-                                        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
+        <div class="clearfix"></div>
+    </header>
   </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-                                            
-                                                <div class="clearfix"></div>
-        </div>
-        </div>
 </article>
+  
+  
+    </div></section>
+  
 
     
-<nav id="article-nav">
-  
-    <a href="/2019/11/24/%E4%BA%B2%E7%88%B1%E7%9A%84/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          亲爱的
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/11/19/Hey-Joker/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hey, Joker!</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-        
-            <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#跨站脚本攻击XSS调研"><span class="toc-number">1.</span> <span class="toc-text">跨站脚本攻击XSS调研</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、-XSS概念"><span class="toc-number">1.1.</span> <span class="toc-text">一、    XSS概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、-简单XSS配置"><span class="toc-number">1.2.</span> <span class="toc-text">二、    简单XSS配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、-防止XSS攻击"><span class="toc-number">1.3.</span> <span class="toc-text">三、    防止XSS攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、-XSS攻击后的IIS6日志"><span class="toc-number">1.4.</span> <span class="toc-text">四、    XSS攻击后的IIS6日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、-小结"><span class="toc-number">1.5.</span> <span class="toc-text">五、    小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、-参考网站"><span class="toc-number">1.6.</span> <span class="toc-text">六、    参考网站</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
 
 
-                
-                    
-                                
-                                    <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80NzQzOC8yMzkzOA==">
-    <script type="text/javascript">
-        (function(d, s) {
-            var j, e = d.getElementsByTagName(s)[0];
-
-            if (typeof LivereTower === 'function') {
-                return;
-            }
-
-            j = d.createElement(s);
-            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-            j.async = true;
-
-            e.parentNode.insertBefore(j, e);
-        })(document, 'script');
-    </script>
-    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-                                        
-                                            
-
-                                                        
-
-                                                                    
-
-                                                                            
-                                                                                        
                             </div>
                         </div>
                     </div>
@@ -499,8 +232,8 @@
     var yiliaConfig = {
         mathjax: false,
         isHome: false,
-        isPost: true,
-        isArchive: false,
+        isPost: false,
+        isArchive: true,
         isTag: false,
         isCategory: false,
         open_in_new: false,
