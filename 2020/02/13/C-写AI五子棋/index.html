@@ -20,7 +20,8 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601544134.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581689653836.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin.png">
-<meta property="og:updated_time" content="2020-02-14T14:36:09.445Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin1.jpg">
+<meta property="og:updated_time" content="2020-02-15T14:57:49.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601430068.png">
   
@@ -234,6 +235,52 @@
 <p>AI是MAX层，在所有下方叶子节点中选择极大值，而人类是MIN层，在所有下方叶子节点中选择极小值。</p>
 <p>同时alpha-beta剪枝可以减少运算量。</p>
 <h2 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/zyhhhy/myGobang/tree/master/myGobangDay2" target="_blank" rel="noopener">https://github.com/zyhhhy/myGobang/tree/master/myGobangDay2</a></p>
+<h1 id="第三天"><a href="#第三天" class="headerlink" title="第三天"></a>第三天</h1><h2 id="AI算法"><a href="#AI算法" class="headerlink" title="AI算法"></a>AI算法</h2><p>现在使用极大极小值算法总是出现问题。</p>
+<p>一方面getScore函数在中途会修改turn的值，导致下棋的时候会出现开局连续两颗黑子的问题。</p>
+<p>还有就是，很多函数接口定义不清楚，比如calculate中包含的各种计算棋型的函数，其核心都是基于checkSame函数的，但是checkSame函数原型为</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (chess[row][col] == turn);</span><br></pre></td></tr></table></figure>
+
+<p>也就是说检查时与turn有关。</p>
+<p>我尝试了很多种方法，包括先计算人类的打分值，再计算AI的打分值以此使turn恢复原值。但是好像并没有成功。</p>
+<p>再加上CB的debug功能不太会用，所以一直也检查不出什么错误。</p>
+<p>后来我想干脆再创建一个virtualChess虚拟棋盘，把原始棋盘的信息往里面一导，所有AI算法都在虚拟棋盘下面进行。可是问题又出现在calculate等函数上面，在写的时候，就没有预留chess这一数据类型的端口，也就是说默认是以chess做计算的，所以即使添加了virtualChess也没有用。</p>
+<p>仔细一想，class里的private数据相当于全局变量，这个使用起来既有好处也很危险的。</p>
+<p>比如row和col就定义为private变量，主要因为落子方便，但是有时候就比较恶心了。</p>
+<p>综上，虽然整个棋盘的成员函数有顶层设计，但是总觉得设计得不够，很明显是经验不足。导致后来经常被作用域坑了。我需要稍微调整一下思路，把能修改接口的部分还是修改一下，不然整个程序可能很难运行了。</p>
+<h3 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h3><p>整体是通过row和col来传递计算得到的值进行落子的</p>
+<p>针对于turn的说明</p>
+<p><strong>在while循环里turn是不起作用的，所以即使turn被改变，依旧落子为当前颜色</strong></p>
+<p>那么问题来了，为什么在执行过程中，连续下了两个点都是黑子</p>
+<p>是不是8，8点覆盖了？</p>
+<p>但是应该不是，覆盖时颜色自动覆盖，所以不可能</p>
+<p><strong>checkAround</strong></p>
+<p>getscore得到的值为当前颜色得到的打分值</p>
+<p>原则上不用virtualChess肯定不行，但是问题在于所有计算的地方使用的都是chess</p>
+<p>那么解决方法来了，<strong>直接把chess改为virtualChess即可，因为这些计算分值的函数都是为AI预备的</strong></p>
+<p>有一个很重要的问题在于</p>
+<p>AI知道赢但是不知道堵</p>
+<p>发现问题了，<strong>在AI_2_MIN里面，直接调用getScore，那么这时候还没有修改为对方，所以这里的逻辑有误</strong></p>
+<p>看来即使是自己写的代码也要好好检查逻辑顺序问题。</p>
+<p>现在AI已经明显升级了，大概也有小学水平了。（以前是幼儿园水平）</p>
+<h3 id="接下来要做的"><a href="#接下来要做的" class="headerlink" title="接下来要做的"></a>接下来要做的</h3><p>一直还没做alpha-beta剪枝，这个可以不影响计算的正确率同时提高速度，值得研究研究。</p>
+<p>启发式评估</p>
+<h3 id="AI阶段性成果源码"><a href="#AI阶段性成果源码" class="headerlink" title="AI阶段性成果源码"></a>AI阶段性成果源码</h3><p><a href="https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3AI" target="_blank" rel="noopener">https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3AI</a></p>
+<h2 id="alpha-beta剪枝解释"><a href="#alpha-beta剪枝解释" class="headerlink" title="alpha-beta剪枝解释"></a>alpha-beta剪枝解释</h2><p><img src="/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/maxmin1.jpg" alt></p>
+<p>还是以本图为例。看最右边的第二层的5到第三层的8中间划掉的两杠（1），这就是剪枝。</p>
+<p>原理：当我们计算到图中（2）处的5时，因为第二层选择极小值，所以第二层的节点不可能大于5，而又因为第一二仓选择极大值，同时5比目前的极大值6要小。因此无论（1）这条线下方的点数是多少，都不可能使第二层的值变大（只可能变小），更不可能使第一层的值变大。所以（1）以下部分就不需要继续计算了。</p>
+<p>所以说我们要做的就是把维护第二层MIN的极小值MIN与从第三层返回的值temp进行比较，如果MIN&lt;temp也就说不可能改变MIN的值了，所以第三层其他可能性不需要算下去了。</p>
+<h3 id="alpha-beta阶段性成果源码"><a href="#alpha-beta阶段性成果源码" class="headerlink" title="alpha-beta阶段性成果源码"></a>alpha-beta阶段性成果源码</h3><p><a href="https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3AICut" target="_blank" rel="noopener">https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3AICut</a></p>
+<h2 id="启发式搜索"><a href="#启发式搜索" class="headerlink" title="启发式搜索"></a>启发式搜索</h2><h3 id="启发式搜索解释"><a href="#启发式搜索解释" class="headerlink" title="启发式搜索解释"></a>启发式搜索解释</h3><p>如上所示，我们可以想象如果在第二层MIN中，我们对所有点的当前局面得分值（并非从下往上得来的值）进行一个排序，然后从大到小进行下一层的计算，由分析可得剪枝的概率大大增加，时间消耗快速下降。</p>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>我定义一个结构体，存放极大20个得分点的行、列和得分值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">order</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> orderi;</span><br><span class="line">    <span class="keyword">int</span> orderj;</span><br><span class="line">    <span class="keyword">int</span> orderpoint;</span><br><span class="line">&#125;Order;</span><br></pre></td></tr></table></figure>
+
+<p>但是头痛的是如果要按照orderpoint即得分值排序比较困难。</p>
+<p>令人振奋的是，C++的<algorithm>头函数李提供sort函数，可以对结构体按照指定成员排序。具体做法如下：</algorithm></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Order,Order)</span></span>;</span><br><span class="line"><span class="keyword">bool</span> Board::cmp(Order x,Order y)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (x.orderpoint) &gt; (y.orderpoint);<span class="comment">// &gt;降序  &lt;升序</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用sort</span></span><br><span class="line"><span class="built_in">std</span>::sort(orderSort,orderSort+N*N,cmp);</span><br></pre></td></tr></table></figure>
+
+<p>注意上述的cmp函数必须定义为static类型，否则会报错。</p>
+<p>如此一来，结构体数组就被排序成功。然后再把前20个（自己设定）拿来计算，就可以省去很多无用的计算了。</p>
+<h3 id="启发式搜索阶段性成果源码"><a href="#启发式搜索阶段性成果源码" class="headerlink" title="启发式搜索阶段性成果源码"></a>启发式搜索阶段性成果源码</h3><p><a href="https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3HEURISTIC" target="_blank" rel="noopener">https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3HEURISTIC</a></p>
 
                                             
                                                 
@@ -393,7 +440,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一天"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要成果"><span class="toc-number">1.1.</span> <span class="toc-text">主要成果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到问题"><span class="toc-number">1.2.</span> <span class="toc-text">遇到问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以改进的地方"><span class="toc-number">1.3.</span> <span class="toc-text">可以改进的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二天"><span class="toc-number">2.</span> <span class="toc-text">第二天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EGE部分"><span class="toc-number">2.1.</span> <span class="toc-text">EGE部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-number">2.2.</span> <span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极大极小值算法和alpha-beta剪枝"><span class="toc-number">2.3.</span> <span class="toc-text">极大极小值算法和alpha-beta剪枝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码-1"><span class="toc-number">2.4.</span> <span class="toc-text">源码</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一天"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要成果"><span class="toc-number">1.1.</span> <span class="toc-text">主要成果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到问题"><span class="toc-number">1.2.</span> <span class="toc-text">遇到问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以改进的地方"><span class="toc-number">1.3.</span> <span class="toc-text">可以改进的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二天"><span class="toc-number">2.</span> <span class="toc-text">第二天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EGE部分"><span class="toc-number">2.1.</span> <span class="toc-text">EGE部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-number">2.2.</span> <span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极大极小值算法和alpha-beta剪枝"><span class="toc-number">2.3.</span> <span class="toc-text">极大极小值算法和alpha-beta剪枝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码-1"><span class="toc-number">2.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三天"><span class="toc-number">3.</span> <span class="toc-text">第三天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AI算法"><span class="toc-number">3.1.</span> <span class="toc-text">AI算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码整理"><span class="toc-number">3.1.1.</span> <span class="toc-text">代码整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接下来要做的"><span class="toc-number">3.1.2.</span> <span class="toc-text">接下来要做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI阶段性成果源码"><span class="toc-number">3.1.3.</span> <span class="toc-text">AI阶段性成果源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alpha-beta剪枝解释"><span class="toc-number">3.2.</span> <span class="toc-text">alpha-beta剪枝解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#alpha-beta阶段性成果源码"><span class="toc-number">3.2.1.</span> <span class="toc-text">alpha-beta阶段性成果源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启发式搜索"><span class="toc-number">3.3.</span> <span class="toc-text">启发式搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启发式搜索解释"><span class="toc-number">3.3.1.</span> <span class="toc-text">启发式搜索解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.3.2.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启发式搜索阶段性成果源码"><span class="toc-number">3.3.3.</span> <span class="toc-text">启发式搜索阶段性成果源码</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
