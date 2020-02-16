@@ -21,7 +21,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581689653836.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin1.jpg">
-<meta property="og:updated_time" content="2020-02-15T14:57:49.452Z">
+<meta property="og:updated_time" content="2020-02-16T02:27:14.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601430068.png">
   
@@ -281,7 +281,32 @@
 <p>注意上述的cmp函数必须定义为static类型，否则会报错。</p>
 <p>如此一来，结构体数组就被排序成功。然后再把前20个（自己设定）拿来计算，就可以省去很多无用的计算了。</p>
 <h3 id="启发式搜索阶段性成果源码"><a href="#启发式搜索阶段性成果源码" class="headerlink" title="启发式搜索阶段性成果源码"></a>启发式搜索阶段性成果源码</h3><p><a href="https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3HEURISTIC" target="_blank" rel="noopener">https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3HEURISTIC</a></p>
-
+<p>记录一下这次五子棋项目的感想。</p>
+<h1 id="说说好的"><a href="#说说好的" class="headerlink" title="说说好的"></a>说说好的</h1><ol>
+<li><p>进度把握的不错，安排三天写完，就三天写完。第一天写基础服务，构建五子棋基本框架。第二天新加GUI和初级AI算法。第三天完善AI算法，加入alpha-beta剪枝和启发式搜索。在第二天的程序中我曾卡在AI第二层的算法出现问题，但后来经过分析也找出了问题所在。</p>
+</li>
+<li><p>结构化系统化编程，以后有很大的拓展空间，比如遗传算法，再比如迭代加深、Zobrist缓存和算杀。</p>
+<p>​        具体可参考<a href="https://github.com/Chuck-Ai/gobang" target="_blank" rel="noopener">https://github.com/Chuck-Ai/gobang</a></p>
+</li>
+</ol>
+<ol start="3">
+<li>借助于Dependencies软件可独立运行与未装环境的电脑上。</li>
+</ol>
+<h1 id="说说不足"><a href="#说说不足" class="headerlink" title="说说不足"></a>说说不足</h1><ol>
+<li><p>接口有漏洞。虽然有顶层设计，但是在代码实现的过程中依旧出现比较大的问题。比如有的地方一开始没有定义传入参数row和col，结果都默认使用private参数，就像直接修改了全局变量，这个做法是非常危险的。下次在顶层设计的时候还是最好画一个图，画出函数之间的调用关系，否则容易出错。</p>
+</li>
+<li><p>算法有瑕疵。alpha-beta剪枝原则上是根本不可能改变下棋结果的，但是我开启剪枝之后竟然棋路变了，这也是挺奇怪的。当然，alpha-beta剪枝开启后效果非常明显，计算起来基本没有延时。启发式搜索在开局的时候有漏洞，AI不知道去拦，但是后面就没什么问题。不过总的来说，我写出来的alpha-beta剪枝和启发式搜索并没有达到更高的智能，只能说速度变快了。</p>
+</li>
+<li><p>实现有困难。其实到现在极大极小值算法我还是抄了网上一个博主的博客。</p>
+<p>​        网址<a href="https://blog.csdn.net/nameofcsdn/article/details/78640511" target="_blank" rel="noopener">https://blog.csdn.net/nameofcsdn/article/details/78640511</a></p>
+<p>而且他只写了三层极大极小值算法，也就是一三为AI，二为人类。这也让我有点奇怪，因为原则上极大极小值算法应该是偶数层。实际上可以尝试尝试把层数提高。</p>
+<p>另外，我没有采用比较普遍的递归方式，而是采用三层for循环，这也是可以考虑的地方。</p>
+</li>
+</ol>
+<h1 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h1><p>经世致用，我一直觉得能把所学知识用出来就是非常幸福的一件事情。</p>
+<p>希望以后在学习到更高层的算法时可以记得这个五子棋，把它变得更加强大。</p>
+<p>写这个五子棋应该是我这个寒假做的最正确的一件事了。</p>
+<h1 id="To-be-continued"><a href="#To-be-continued" class="headerlink" title="To be continued"></a>To be continued</h1>
                                             
                                                 
                                                     
@@ -411,6 +436,15 @@
     
 <nav id="article-nav">
   
+    <a href="/2020/02/16/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C++学习笔记
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/02/10/hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0Ubuntu%E6%9C%8D%E5%8A%A1%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">hexo博客部署到Ubuntu服务器</div>
@@ -440,7 +474,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一天"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要成果"><span class="toc-number">1.1.</span> <span class="toc-text">主要成果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到问题"><span class="toc-number">1.2.</span> <span class="toc-text">遇到问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以改进的地方"><span class="toc-number">1.3.</span> <span class="toc-text">可以改进的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二天"><span class="toc-number">2.</span> <span class="toc-text">第二天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EGE部分"><span class="toc-number">2.1.</span> <span class="toc-text">EGE部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-number">2.2.</span> <span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极大极小值算法和alpha-beta剪枝"><span class="toc-number">2.3.</span> <span class="toc-text">极大极小值算法和alpha-beta剪枝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码-1"><span class="toc-number">2.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三天"><span class="toc-number">3.</span> <span class="toc-text">第三天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AI算法"><span class="toc-number">3.1.</span> <span class="toc-text">AI算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码整理"><span class="toc-number">3.1.1.</span> <span class="toc-text">代码整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接下来要做的"><span class="toc-number">3.1.2.</span> <span class="toc-text">接下来要做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI阶段性成果源码"><span class="toc-number">3.1.3.</span> <span class="toc-text">AI阶段性成果源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alpha-beta剪枝解释"><span class="toc-number">3.2.</span> <span class="toc-text">alpha-beta剪枝解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#alpha-beta阶段性成果源码"><span class="toc-number">3.2.1.</span> <span class="toc-text">alpha-beta阶段性成果源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启发式搜索"><span class="toc-number">3.3.</span> <span class="toc-text">启发式搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启发式搜索解释"><span class="toc-number">3.3.1.</span> <span class="toc-text">启发式搜索解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.3.2.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启发式搜索阶段性成果源码"><span class="toc-number">3.3.3.</span> <span class="toc-text">启发式搜索阶段性成果源码</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一天"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要成果"><span class="toc-number">1.1.</span> <span class="toc-text">主要成果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到问题"><span class="toc-number">1.2.</span> <span class="toc-text">遇到问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以改进的地方"><span class="toc-number">1.3.</span> <span class="toc-text">可以改进的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">1.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二天"><span class="toc-number">2.</span> <span class="toc-text">第二天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EGE部分"><span class="toc-number">2.1.</span> <span class="toc-text">EGE部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-number">2.2.</span> <span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极大极小值算法和alpha-beta剪枝"><span class="toc-number">2.3.</span> <span class="toc-text">极大极小值算法和alpha-beta剪枝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码-1"><span class="toc-number">2.4.</span> <span class="toc-text">源码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第三天"><span class="toc-number">3.</span> <span class="toc-text">第三天</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AI算法"><span class="toc-number">3.1.</span> <span class="toc-text">AI算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码整理"><span class="toc-number">3.1.1.</span> <span class="toc-text">代码整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接下来要做的"><span class="toc-number">3.1.2.</span> <span class="toc-text">接下来要做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI阶段性成果源码"><span class="toc-number">3.1.3.</span> <span class="toc-text">AI阶段性成果源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alpha-beta剪枝解释"><span class="toc-number">3.2.</span> <span class="toc-text">alpha-beta剪枝解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#alpha-beta阶段性成果源码"><span class="toc-number">3.2.1.</span> <span class="toc-text">alpha-beta阶段性成果源码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启发式搜索"><span class="toc-number">3.3.</span> <span class="toc-text">启发式搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启发式搜索解释"><span class="toc-number">3.3.1.</span> <span class="toc-text">启发式搜索解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遇到的问题"><span class="toc-number">3.3.2.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启发式搜索阶段性成果源码"><span class="toc-number">3.3.3.</span> <span class="toc-text">启发式搜索阶段性成果源码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#说说好的"><span class="toc-number">4.</span> <span class="toc-text">说说好的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#说说不足"><span class="toc-number">5.</span> <span class="toc-text">说说不足</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#感想"><span class="toc-number">6.</span> <span class="toc-text">感想</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#To-be-continued"><span class="toc-number">7.</span> <span class="toc-text">To be continued</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -576,10 +610,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复盘</a>
               </li>
              
@@ -592,7 +622,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">小说</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,15 +642,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">小说</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">时评文</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">演讲稿</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,6 +651,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">游记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">演讲稿</a>
               </li>
             
             <div class="clearfix"></div>
