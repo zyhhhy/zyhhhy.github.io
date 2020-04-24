@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @version: 
  * @Author: 周耀海 u201811260@hust.edu.cn
- * @LastEditTime: 2020-03-10 22:35:19
+ * @LastEditTime: 2020-04-14 16:45:39
  -->
 <!DOCTYPE html>
 <html>
@@ -11,30 +11,30 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://120.79.219.131">
+  <link rel="dns-prefetch" href="https://zyhhhy.github.io">
   <title>C++socket笔记 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="socket是什么意思数据传输方式 SOCK_STREAM 和 SOCK_DGRAMSOCK_STREAM 表示面向连接的数据传输方式。准确但慢 SOCK_DGRAM 表示无连接的数据传输方式。快但可能错">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++socket笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="socket是什么意思数据传输方式 SOCK_STREAM 和 SOCK_DGRAMSOCK_STREAM 表示面向连接的数据传输方式。准确但慢 SOCK_DGRAM 表示无连接的数据传输方式。快但可能错">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151026205304555.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15101Q60GV27.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020115S23R.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020132J32G.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110510394G48.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15102015224Wc.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZSA3309.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZT059560.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151110203SY49.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151026205304555.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15101Q60GV27.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020115S23R.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020132J32G.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110510394G48.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15102015224Wc.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZSA3309.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZT059560.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151110203SY49.jpg">
 <meta property="og:updated_time" content="2020-02-16T02:34:23.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -201,12 +201,10 @@
                                         <h1 id="socket是什么意思"><a href="#socket是什么意思" class="headerlink" title="socket是什么意思"></a>socket是什么意思</h1><h2 id="数据传输方式-SOCK-STREAM-和-SOCK-DGRAM"><a href="#数据传输方式-SOCK-STREAM-和-SOCK-DGRAM" class="headerlink" title="数据传输方式 SOCK_STREAM 和 SOCK_DGRAM"></a>数据传输方式 SOCK_STREAM 和 SOCK_DGRAM</h2><p>SOCK_STREAM 表示面向连接的数据传输方式。准确但慢</p>
 <p>SOCK_DGRAM 表示无连接的数据传输方式。快但可能错</p>
 <a id="more"></a>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SOCKET sock = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>);  <span class="comment">//创建TCP套接字</span></span><br></pre></td></tr></table></figure>
-
 <p>0代表系统自动推演协议</p>
 <h1 id="一个简单的Windows下的socket程序"><a href="#一个简单的Windows下的socket程序" class="headerlink" title="一个简单的Windows下的socket程序"></a>一个简单的Windows下的socket程序</h1><p>windows下codeblocks报错undefined reference to `WSAStartup@8’|</p>
-<p>解决方案：menu–&gt;Project–&gt;build options–&gt;Debug-&gt;Linker Setting–&gt;Other Linker Options: 加上 “-lws2_32“</p>
+<p>解决方案：menu—&gt;Project—&gt;build options—&gt;Debug-&gt;Linker Setting—&gt;Other Linker Options: 加上 “-lws2_32“</p>
 <p>工具-&gt;编译选项-&gt;在连接器命令行加入如下命令里面添加-lwsock32</p>
 <h1 id="WSAStartup-函数以及DLL的加载"><a href="#WSAStartup-函数以及DLL的加载" class="headerlink" title="WSAStartup()函数以及DLL的加载"></a>WSAStartup()函数以及DLL的加载</h1><ol>
 <li><p>新版本链接库是ws2_32.dll</p>
@@ -215,10 +213,8 @@
 <li><p>WSAStartup() 函数</p>
 <p>原型</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">WSAStartup</span><span class="params">(WORD wVersionRequested, LPWSADATA lpWSAData)</span></span>;<span class="comment">//版本号和指针</span></span><br></pre></td></tr></table></figure>
-
 <p>使用</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WSAStartup( MAKEWORD(<span class="number">2</span>, <span class="number">2</span>), &amp;wsaData);</span><br></pre></td></tr></table></figure>
-
 <p>​    用MAKEWORD() 宏函数对版本号进行转换</p>
 </li>
 <li><p>WinSock 编程的第一步就是加载 ws2_32.dll，然后调用 WSAStartup() 函数进行初始化，并指明要使用的版本号。</p>
@@ -227,36 +223,25 @@
 <h1 id="使用bind-和connect-函数"><a href="#使用bind-和connect-函数" class="headerlink" title="使用bind()和connect()函数"></a>使用bind()和connect()函数</h1><p>服务器端要用 bind() 函数将套接字与特定的IP地址和端口绑定起来，只有这样，流经该IP地址和端口的数据才能交给套接字处理；而客户端要用 connect() 函数建立连接。</p>
 <h2 id="bind-函数"><a href="#bind-函数" class="headerlink" title="bind() 函数"></a>bind() 函数</h2><p>bind() 函数的原型为：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">(SOCKET sock, <span class="keyword">const</span> struct sockaddr *addr, <span class="keyword">int</span> addrlen)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="代码详解-linux版"><a href="#代码详解-linux版" class="headerlink" title="代码详解(linux版)"></a>代码详解(linux版)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建套接字</span></span><br><span class="line"><span class="keyword">int</span> serv_sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建sockaddr_in结构体变量</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">serv_addr</span>;</span></span><br><span class="line"><span class="built_in">memset</span>(&amp;serv_addr, <span class="number">0</span>, <span class="keyword">sizeof</span>(serv_addr));  <span class="comment">//每个字节都用0填充</span></span><br><span class="line">serv_addr.sin_family = AF_INET;  <span class="comment">//使用IPv4地址</span></span><br><span class="line">serv_addr.sin_addr.s_addr = inet_addr(<span class="string">"127.0.0.1"</span>);  <span class="comment">//具体的IP地址</span></span><br><span class="line">serv_addr.sin_port = htons(<span class="number">1234</span>);  <span class="comment">//端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将套接字和IP、端口绑定</span></span><br><span class="line">bind(serv_sock, (struct sockaddr*)&amp;serv_addr, <span class="keyword">sizeof</span>(serv_addr));</span><br></pre></td></tr></table></figure>
-
 <p>先创建一个名为serv_sock的socket</p>
 <p>然后创建一个sockaddr_in的结构体变量serv_addr</p>
 <p>sockaddr_in结构体</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span>&#123;</span></span><br><span class="line">    <span class="keyword">sa_family_t</span>     sin_family;   <span class="comment">//地址族（Address Family），也就是地址类型</span></span><br><span class="line">    <span class="keyword">uint16_t</span>        sin_port;     <span class="comment">//16位的端口号</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span>  <span class="title">sin_addr</span>;</span>     <span class="comment">//32位IP地址</span></span><br><span class="line">    <span class="keyword">char</span>            sin_zero[<span class="number">8</span>];  <span class="comment">//不使用，一般用0填充</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>填充所需的信息,然后强制转化为sockaddr类型,用bind函数把socket和IP、port绑定</p>
 <p><img src="/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/1-151012194503V5.jpg" alt></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">in_addr</span>&#123;</span></span><br><span class="line">    <span class="keyword">in_addr_t</span>  s_addr;  <span class="comment">//32位的IP地址</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>因为sockaddr_in的第三项是一个结构体,里面放着IP地址,所以需要用inet_addr函数对IP地址进行转化(把字符串转化为整数)</p>
 <h3 id="比较sockaddr-in和sockaddr"><a href="#比较sockaddr-in和sockaddr" class="headerlink" title="比较sockaddr_in和sockaddr"></a>比较sockaddr_in和sockaddr</h3><p><img src="/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/1-151026205304555.jpg" alt></p>
 <p>大小相同,信息相同,但是对sockaddr赋值费劲,所以就先对sockaddr_in赋值然后转化为sockaddr</p>
 <h2 id="connect-函数"><a href="#connect-函数" class="headerlink" title="connect() 函数"></a>connect() 函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">connect</span><span class="params">(SOCKET sock, <span class="keyword">const</span> struct sockaddr *serv_addr, <span class="keyword">int</span> addrlen)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="使用listen-和accept-函数"><a href="#使用listen-和accept-函数" class="headerlink" title="使用listen()和accept()函数"></a>使用listen()和accept()函数</h1><h2 id="listen-函数"><a href="#listen-函数" class="headerlink" title="listen() 函数"></a>listen() 函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">listen</span><span class="params">(SOCKET sock, <span class="keyword">int</span> backlog)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <p>backlog 为请求队列的最大长度。</p>
 <h2 id="accept-函数"><a href="#accept-函数" class="headerlink" title="accept() 函数"></a>accept() 函数</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SOCKET <span class="title">accept</span><span class="params">(SOCKET sock, **struct** sockaddr *addr, <span class="keyword">int</span> *addrlen)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <p>accept() 返回一个新的套接字来和客户端通信，addr 保存了客户端的IP地址和端口号，而 sock 是服务器端的套接字</p>
 <h1 id="socket数据的发送和接收"><a href="#socket数据的发送和接收" class="headerlink" title="socket数据的发送和接收"></a>socket数据的发送和接收</h1><h3 id="send-函数"><a href="#send-函数" class="headerlink" title="send() 函数"></a>send() 函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">send</span><span class="params">(SOCKET sock, <span class="keyword">const</span> <span class="keyword">char</span> *buf, <span class="keyword">int</span> len, <span class="keyword">int</span> flags)</span></span>;</span><br></pre></td></tr></table></figure>
-
 <p>sock 为要发送数据的套接字，buf 为要发送的数据的缓冲区地址，len 为要发送的数据的字节数，flags 为发送数据时的选项。</p>
 <h3 id="recv-函数"><a href="#recv-函数" class="headerlink" title="recv() 函数"></a>recv() 函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">recv</span><span class="params">(SOCKET sock, <span class="keyword">char</span> *buf, <span class="keyword">int</span> len, <span class="keyword">int</span> flags)</span></span>;</span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="socket缓冲区以及阻塞模式"><a href="#socket缓冲区以及阻塞模式" class="headerlink" title="socket缓冲区以及阻塞模式"></a>socket缓冲区以及阻塞模式</h1><p><img src="/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/1-15101Q60GV27.jpg" alt></p>
 <ul>
 <li>I/O缓冲区在每个TCP套接字中单独存在；</li>
@@ -272,9 +257,8 @@
 <p><strong>Ack号 = Seq号 + 传递的字节数 + 1</strong></p>
 <h1 id="TCP四次握手断开连接（图解）"><a href="#TCP四次握手断开连接（图解）" class="headerlink" title="TCP四次握手断开连接（图解）"></a>TCP四次握手断开连接（图解）</h1><p><img src="/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/1-15102015224Wc.jpg" alt></p>
 <h2 id="关于-TIME-WAIT-状态的说明"><a href="#关于-TIME-WAIT-状态的说明" class="headerlink" title="关于 TIME_WAIT 状态的说明"></a>关于 TIME_WAIT 状态的说明</h2><p>数据包在网络中是有生存时间的，超过这个时间还未到达目标主机就会被丢弃，并通知源主机。这称为报文最大生存时间（MSL，Maximum Segment Lifetime）。TIME_WAIT 要等待 2MSL 才会进入 CLOSED 状态。ACK 包到达服务器需要 MSL 时间，服务器重传 FIN 包也需要 MSL 时间，2MSL 是数据包往返的最大时间，如果 2MSL 后还未收到服务器重传的 FIN 包，就说明服务器已经收到了 ACK 包。</p>
-<h1 id="优雅的断开连接–shutdown"><a href="#优雅的断开连接–shutdown" class="headerlink" title="优雅的断开连接–shutdown()"></a>优雅的断开连接–shutdown()</h1><p> shutdown() 函数</p>
+<h1 id="优雅的断开连接—shutdown"><a href="#优雅的断开连接—shutdown" class="headerlink" title="优雅的断开连接—shutdown()"></a>优雅的断开连接—shutdown()</h1><p> shutdown() 函数</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">shutdown</span><span class="params">(SOCKET s, <span class="keyword">int</span> howto)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <p>sock 为需要断开的套接字，howto 为断开方式。</p>
 <p>howto 在 Windows 下有以下取值：</p>
 <ul>
@@ -283,7 +267,6 @@
 <li>SD_BOTH：同时关闭接收和发送操作。</li>
 </ul>
 <h1 id="socket文件传输功能的实现"><a href="#socket文件传输功能的实现" class="headerlink" title="socket文件传输功能的实现"></a>socket文件传输功能的实现</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Server 代码</span></span><br><span class="line"><span class="keyword">int</span> nCount;</span><br><span class="line"><span class="keyword">while</span>( (nCount = fread(buffer, <span class="number">1</span>, BUF_SIZE, fp)) &gt; <span class="number">0</span> )&#123;</span><br><span class="line">    send(sock, buffer, nCount, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Client 代码</span></span><br><span class="line"><span class="keyword">int</span> nCount;</span><br><span class="line"><span class="keyword">while</span>( (nCount = recv(clntSock, buffer, BUF_SIZE, <span class="number">0</span>)) &gt; <span class="number">0</span> )&#123;</span><br><span class="line">    fwrite(buffer, nCount, <span class="number">1</span>, fp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>问题在于recv()只有在收到FIN包时才会返回0</p>
 <p>所以服务端要发送一个shutdown()使得recv返回0，跳出while循环</p>
 <h1 id="socket网络字节序以及大端序小端序"><a href="#socket网络字节序以及大端序小端序" class="headerlink" title="socket网络字节序以及大端序小端序"></a>socket网络字节序以及大端序小端序</h1><p>0x20 号开始的地址中保存4字节 int 型数据 0x12345678，大端序CPU保存方式如下图所示：</p>
@@ -301,13 +284,10 @@
 <p>通常，以为s后缀的函数中，s代表2个字节short，因此用于端口号转换；以l为后缀的函数中，l代表4个字节的long，因此用于IP地址转换。</p>
 <h1 id="在socket中使用域名"><a href="#在socket中使用域名" class="headerlink" title="在socket中使用域名"></a>在socket中使用域名</h1><p>gethostbyname() 函数可以实现通过域名获取IP地址</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct hostent *<span class="title">gethostbyname</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *hostname)</span></span>;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hostent</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> *h_name;  <span class="comment">//official name</span></span><br><span class="line">    <span class="keyword">char</span> **h_aliases;  <span class="comment">//alias list</span></span><br><span class="line">    <span class="keyword">int</span>  h_addrtype;  <span class="comment">//host address type</span></span><br><span class="line">    <span class="keyword">int</span>  h_length;  <span class="comment">//address lenght</span></span><br><span class="line">    <span class="keyword">char</span> **h_addr_list;  <span class="comment">//address list这是最重要的成员。通过该成员以整数形式保存域名对应的IP地址。对于用户较多的服务器，可能会分配多个IP地址给同一域名，利用多个服务器进行均衡负载。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><img src="/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/1-151110203SY49.jpg" alt></p>
 <h1 id="基于UDP的服务器端和客户端"><a href="#基于UDP的服务器端和客户端" class="headerlink" title="基于UDP的服务器端和客户端"></a>基于UDP的服务器端和客户端</h1><p>sendto() 函数：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sendto</span><span class="params">(SOCKET sock, **<span class="keyword">const</span>** <span class="keyword">char</span> *buf, <span class="keyword">int</span> nbytes, <span class="keyword">int</span> flags, **<span class="keyword">const</span>** **struct** sockadr *to, <span class="keyword">int</span> addrlen)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>sock：用于传输UDP数据的套接字；</li>
 <li>buf：保存待传输数据的缓冲区地址；</li>
@@ -318,7 +298,6 @@
 </ul>
 <p>recvfrom() 函数：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">recvfrom</span><span class="params">(SOCKET sock, <span class="keyword">char</span> *buf, <span class="keyword">int</span> nbytes, <span class="keyword">int</span> flags, **<span class="keyword">const</span>** **struct** sockaddr *from, <span class="keyword">int</span> *addrlen)</span></span>;  <span class="comment">//Windows</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>sock：用于接收UDP数据的套接字；</li>
 <li>buf：保存接收数据的缓冲区地址；</li>
@@ -328,7 +307,6 @@
 <li>addrlen：保存参数 from 的结构体变量长度的变量地址值。</li>
 </ul>
 <h2 id="一个问题"><a href="#一个问题" class="headerlink" title="一个问题"></a>一个问题</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sendto(sock, buffer, <span class="built_in">strlen</span>(buffer), <span class="number">0</span>, (struct sockaddr*)&amp;servAddr, <span class="keyword">sizeof</span>(servAddr));</span><br></pre></td></tr></table></figure>
-
 <p>客户端发送时填写的地址是服务器的地址,而不是客户端的地址</p>
 <p>那么问题来了,sockaddr fromAddr自从定义之后,就没有再添加过数据,那么这个sendto的信息从哪里来呢?</p>
 <p>是不是client和server连接后,这个字段自动填写?</p>
@@ -345,7 +323,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    http://120.79.219.131/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/
+                                                                                    https://zyhhhy.github.io/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -448,7 +426,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://120.79.219.131/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -461,6 +439,15 @@
 
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/14/Pytorch%E5%85%A5%E9%97%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Pytorch入门
+        
+      </div>
+    </a>
   
   
     <a href="/2020/02/16/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
@@ -491,7 +478,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#socket是什么意思"><span class="toc-number">1.</span> <span class="toc-text">socket是什么意思</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据传输方式-SOCK-STREAM-和-SOCK-DGRAM"><span class="toc-number">1.1.</span> <span class="toc-text">数据传输方式 SOCK_STREAM 和 SOCK_DGRAM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个简单的Windows下的socket程序"><span class="toc-number">2.</span> <span class="toc-text">一个简单的Windows下的socket程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WSAStartup-函数以及DLL的加载"><span class="toc-number">3.</span> <span class="toc-text">WSAStartup()函数以及DLL的加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用bind-和connect-函数"><span class="toc-number">4.</span> <span class="toc-text">使用bind()和connect()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bind-函数"><span class="toc-number">4.1.</span> <span class="toc-text">bind() 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码详解-linux版"><span class="toc-number">4.2.</span> <span class="toc-text">代码详解(linux版)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#比较sockaddr-in和sockaddr"><span class="toc-number">4.2.1.</span> <span class="toc-text">比较sockaddr_in和sockaddr</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#connect-函数"><span class="toc-number">4.3.</span> <span class="toc-text">connect() 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用listen-和accept-函数"><span class="toc-number">5.</span> <span class="toc-text">使用listen()和accept()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#listen-函数"><span class="toc-number">5.1.</span> <span class="toc-text">listen() 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#accept-函数"><span class="toc-number">5.2.</span> <span class="toc-text">accept() 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket数据的发送和接收"><span class="toc-number">6.</span> <span class="toc-text">socket数据的发送和接收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#send-函数"><span class="toc-number">6.0.1.</span> <span class="toc-text">send() 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#recv-函数"><span class="toc-number">6.0.2.</span> <span class="toc-text">recv() 函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket缓冲区以及阻塞模式"><span class="toc-number">7.</span> <span class="toc-text">socket缓冲区以及阻塞模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#阻塞模式"><span class="toc-number">7.1.</span> <span class="toc-text">阻塞模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP的粘包问题以及数据的无边界性"><span class="toc-number">8.</span> <span class="toc-text">TCP的粘包问题以及数据的无边界性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP数据报结构以及三次握手（图解）"><span class="toc-number">9.</span> <span class="toc-text">TCP数据报结构以及三次握手（图解）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP数据报结构"><span class="toc-number">9.1.</span> <span class="toc-text">TCP数据报结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接的建立（三次握手）"><span class="toc-number">9.2.</span> <span class="toc-text">连接的建立（三次握手）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP数据的传输过程"><span class="toc-number">10.</span> <span class="toc-text">TCP数据的传输过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP四次握手断开连接（图解）"><span class="toc-number">11.</span> <span class="toc-text">TCP四次握手断开连接（图解）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-TIME-WAIT-状态的说明"><span class="toc-number">11.1.</span> <span class="toc-text">关于 TIME_WAIT 状态的说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优雅的断开连接–shutdown"><span class="toc-number">12.</span> <span class="toc-text">优雅的断开连接–shutdown()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket文件传输功能的实现"><span class="toc-number">13.</span> <span class="toc-text">socket文件传输功能的实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket网络字节序以及大端序小端序"><span class="toc-number">14.</span> <span class="toc-text">socket网络字节序以及大端序小端序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在socket中使用域名"><span class="toc-number">15.</span> <span class="toc-text">在socket中使用域名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于UDP的服务器端和客户端"><span class="toc-number">16.</span> <span class="toc-text">基于UDP的服务器端和客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一个问题"><span class="toc-number">16.1.</span> <span class="toc-text">一个问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#socket是什么意思"><span class="toc-number">1.</span> <span class="toc-text">socket是什么意思</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据传输方式-SOCK-STREAM-和-SOCK-DGRAM"><span class="toc-number">1.1.</span> <span class="toc-text">数据传输方式 SOCK_STREAM 和 SOCK_DGRAM</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个简单的Windows下的socket程序"><span class="toc-number">2.</span> <span class="toc-text">一个简单的Windows下的socket程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WSAStartup-函数以及DLL的加载"><span class="toc-number">3.</span> <span class="toc-text">WSAStartup()函数以及DLL的加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用bind-和connect-函数"><span class="toc-number">4.</span> <span class="toc-text">使用bind()和connect()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bind-函数"><span class="toc-number">4.1.</span> <span class="toc-text">bind() 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码详解-linux版"><span class="toc-number">4.2.</span> <span class="toc-text">代码详解(linux版)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#比较sockaddr-in和sockaddr"><span class="toc-number">4.2.1.</span> <span class="toc-text">比较sockaddr_in和sockaddr</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#connect-函数"><span class="toc-number">4.3.</span> <span class="toc-text">connect() 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用listen-和accept-函数"><span class="toc-number">5.</span> <span class="toc-text">使用listen()和accept()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#listen-函数"><span class="toc-number">5.1.</span> <span class="toc-text">listen() 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#accept-函数"><span class="toc-number">5.2.</span> <span class="toc-text">accept() 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket数据的发送和接收"><span class="toc-number">6.</span> <span class="toc-text">socket数据的发送和接收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#send-函数"><span class="toc-number">6.0.1.</span> <span class="toc-text">send() 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#recv-函数"><span class="toc-number">6.0.2.</span> <span class="toc-text">recv() 函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket缓冲区以及阻塞模式"><span class="toc-number">7.</span> <span class="toc-text">socket缓冲区以及阻塞模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#阻塞模式"><span class="toc-number">7.1.</span> <span class="toc-text">阻塞模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP的粘包问题以及数据的无边界性"><span class="toc-number">8.</span> <span class="toc-text">TCP的粘包问题以及数据的无边界性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP数据报结构以及三次握手（图解）"><span class="toc-number">9.</span> <span class="toc-text">TCP数据报结构以及三次握手（图解）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP数据报结构"><span class="toc-number">9.1.</span> <span class="toc-text">TCP数据报结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#连接的建立（三次握手）"><span class="toc-number">9.2.</span> <span class="toc-text">连接的建立（三次握手）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP数据的传输过程"><span class="toc-number">10.</span> <span class="toc-text">TCP数据的传输过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP四次握手断开连接（图解）"><span class="toc-number">11.</span> <span class="toc-text">TCP四次握手断开连接（图解）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-TIME-WAIT-状态的说明"><span class="toc-number">11.1.</span> <span class="toc-text">关于 TIME_WAIT 状态的说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#优雅的断开连接—shutdown"><span class="toc-number">12.</span> <span class="toc-text">优雅的断开连接—shutdown()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket文件传输功能的实现"><span class="toc-number">13.</span> <span class="toc-text">socket文件传输功能的实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket网络字节序以及大端序小端序"><span class="toc-number">14.</span> <span class="toc-text">socket网络字节序以及大端序小端序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在socket中使用域名"><span class="toc-number">15.</span> <span class="toc-text">在socket中使用域名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于UDP的服务器端和客户端"><span class="toc-number">16.</span> <span class="toc-text">基于UDP的服务器端和客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一个问题"><span class="toc-number">16.1.</span> <span class="toc-text">一个问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -627,7 +614,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,15 +630,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+                <a href="javascript:void(0)" class="js-tag color3">电影</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,15 +646,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">电影</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">演讲稿</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">时评文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,7 +654,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">时评文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">游记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
             <div class="clearfix"></div>
@@ -811,9 +802,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
         <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
         <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-        <script type="text/javascript" src="/fireworks.js"></script>
+        <!-- <script type="text/javascript" src="/fireworks.js"></script> -->
 
         <script type="text/javascript" color="0, 0, 255" opacity="0.5" src="dist/canvas-nest.js"></script>
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ["$","$"], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], processEscapes: true } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(); for (var i = 0;
+    i
+    < all.length; ++i) all[i].SourceElement().parentNode.className +=' has-jax' ; }); </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 
     </html>

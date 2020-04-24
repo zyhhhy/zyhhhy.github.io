@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @version: 
  * @Author: 周耀海 u201811260@hust.edu.cn
- * @LastEditTime: 2020-03-10 22:35:19
+ * @LastEditTime: 2020-04-14 16:45:39
  -->
 <!DOCTYPE html>
 <html>
@@ -11,25 +11,25 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://120.79.219.131">
+  <link rel="dns-prefetch" href="https://zyhhhy.github.io">
   <title>C++写AI五子棋 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="第一天">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++写AI五子棋">
-<meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="第一天">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601430068.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601544134.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581689653836.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601430068.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601544134.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581689653836.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;maxmin1.jpg">
 <meta property="og:updated_time" content="2020-02-16T02:27:14.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601430068.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;13&#x2F;C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B&#x2F;1581601430068.png">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -195,15 +195,13 @@
                     
                                         <h1 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h1><p><img src="/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/1581601430068.png" alt="1581601430068"></p>
 <a id="more"></a>
-
 <p>刚学完C++有点心血来潮，想再挑战一下AI版五子棋的高峰。</p>
 <h2 id="主要成果"><a href="#主要成果" class="headerlink" title="主要成果"></a>主要成果</h2><ol>
 <li><p>这次采用类继承的方法定义了棋盘和所有成员函数，整体代码比以前用C写的规范很多。</p>
 </li>
 <li><p>正常输出棋盘，实现双人对局功能。</p>
 </li>
-<li><p>AI方面完成评估函数，完成了对五连、活四、冲四、活三的模型搭建，并且对四种模型赋值。为AI上手做好准备。</p>
-</li>
+<li>AI方面完成评估函数，完成了对五连、活四、冲四、活三的模型搭建，并且对四种模型赋值。为AI上手做好准备。</li>
 </ol>
 <p><img src="/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/1581601544134.png" alt="1581601544134"></p>
 <h2 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h2><ol>
@@ -212,7 +210,6 @@
 <li><p>在函数执行顺序方面要留心。</p>
 <p>在我的sumLiveFour函数中有这个语句</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(sameSum(u + <span class="number">4</span>, row, col) + sameSum(u, row, col)</span><br></pre></td></tr></table></figure>
-
 <p>在一开始的时候我将前后两项写反了，所以sameSum返回的distance的值是前面那项（u+4）对应的。导致calculate在计算活四的时候总是不对。所以说在想算法的同时要注意语句的前后顺序。这样的小问题很难察觉。</p>
 </li>
 </ol>
@@ -245,7 +242,6 @@
 <p>一方面getScore函数在中途会修改turn的值，导致下棋的时候会出现开局连续两颗黑子的问题。</p>
 <p>还有就是，很多函数接口定义不清楚，比如calculate中包含的各种计算棋型的函数，其核心都是基于checkSame函数的，但是checkSame函数原型为</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (chess[row][col] == turn);</span><br></pre></td></tr></table></figure>
-
 <p>也就是说检查时与turn有关。</p>
 <p>我尝试了很多种方法，包括先计算人类的打分值，再计算AI的打分值以此使turn恢复原值。但是好像并没有成功。</p>
 <p>再加上CB的debug功能不太会用，所以一直也检查不出什么错误。</p>
@@ -279,11 +275,9 @@
 <h2 id="启发式搜索"><a href="#启发式搜索" class="headerlink" title="启发式搜索"></a>启发式搜索</h2><h3 id="启发式搜索解释"><a href="#启发式搜索解释" class="headerlink" title="启发式搜索解释"></a>启发式搜索解释</h3><p>如上所示，我们可以想象如果在第二层MIN中，我们对所有点的当前局面得分值（并非从下往上得来的值）进行一个排序，然后从大到小进行下一层的计算，由分析可得剪枝的概率大大增加，时间消耗快速下降。</p>
 <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><p>我定义一个结构体，存放极大20个得分点的行、列和得分值</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">order</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> orderi;</span><br><span class="line">    <span class="keyword">int</span> orderj;</span><br><span class="line">    <span class="keyword">int</span> orderpoint;</span><br><span class="line">&#125;Order;</span><br></pre></td></tr></table></figure>
-
 <p>但是头痛的是如果要按照orderpoint即得分值排序比较困难。</p>
 <p>令人振奋的是，C++的<algorithm>头函数李提供sort函数，可以对结构体按照指定成员排序。具体做法如下：</algorithm></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(Order,Order)</span></span>;</span><br><span class="line"><span class="keyword">bool</span> Board::cmp(Order x,Order y)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (x.orderpoint) &gt; (y.orderpoint);<span class="comment">// &gt;降序  &lt;升序</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用sort</span></span><br><span class="line"><span class="built_in">std</span>::sort(orderSort,orderSort+N*N,cmp);</span><br></pre></td></tr></table></figure>
-
 <p>注意上述的cmp函数必须定义为static类型，否则会报错。</p>
 <p>如此一来，结构体数组就被排序成功。然后再把前20个（自己设定）拿来计算，就可以省去很多无用的计算了。</p>
 <h3 id="启发式搜索阶段性成果源码"><a href="#启发式搜索阶段性成果源码" class="headerlink" title="启发式搜索阶段性成果源码"></a>启发式搜索阶段性成果源码</h3><p><a href="https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3HEURISTIC" target="_blank" rel="noopener">https://github.com/zyhhhy/myGobang/tree/master/myGobangDay3HEURISTIC</a></p>
@@ -295,7 +289,7 @@
 <p>​        具体可参考<a href="https://github.com/Chuck-Ai/gobang" target="_blank" rel="noopener">https://github.com/Chuck-Ai/gobang</a></p>
 </li>
 </ol>
-<ol start="3">
+<ol>
 <li>借助于Dependencies软件可独立运行与未装环境的电脑上。</li>
 </ol>
 <h1 id="说说不足"><a href="#说说不足" class="headerlink" title="说说不足"></a>说说不足</h1><ol>
@@ -325,7 +319,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    http://120.79.219.131/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/
+                                                                                    https://zyhhhy.github.io/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -428,7 +422,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://120.79.219.131/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2020/02/13/C-%E5%86%99AI%E4%BA%94%E5%AD%90%E6%A3%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -616,7 +610,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,15 +626,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+                <a href="javascript:void(0)" class="js-tag color3">电影</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,15 +642,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">电影</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">演讲稿</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">时评文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,7 +650,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">时评文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">游记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
             <div class="clearfix"></div>
@@ -800,9 +798,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
         <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
         <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-        <script type="text/javascript" src="/fireworks.js"></script>
+        <!-- <script type="text/javascript" src="/fireworks.js"></script> -->
 
         <script type="text/javascript" color="0, 0, 255" opacity="0.5" src="dist/canvas-nest.js"></script>
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ["$","$"], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], processEscapes: true } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(); for (var i = 0;
+    i
+    < all.length; ++i) all[i].SourceElement().parentNode.className +=' has-jax' ; }); </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 
     </html>

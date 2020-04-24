@@ -2,7 +2,7 @@
  * @Descripttion: 
  * @version: 
  * @Author: 周耀海 u201811260@hust.edu.cn
- * @LastEditTime: 2020-03-10 22:35:19
+ * @LastEditTime: 2020-04-14 16:45:39
  -->
 <!DOCTYPE html>
 <html>
@@ -11,14 +11,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://120.79.219.131">
+  <link rel="dns-prefetch" href="https://zyhhhy.github.io">
   <title>Winserver2003上IIS6配置SQL注入 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="准备动作1.在winserver2003上安装xampp经测试可以直接在winserver2003上安装xampp1.8.2版本并且正常运行 附下载网站： https:&#x2F;&#x2F;sourceforge.net&#x2F;projects&#x2F;xampp&#x2F;files&#x2F;XAMPP%20Windows&#x2F;1.8.2&#x2F; 2.调试xampp 开启xampp，点击start打开mysql。 点击Apache右边的config选择A">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Winserver2003上IIS6配置SQL注入">
-<meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2019&#x2F;11&#x2F;13&#x2F;Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;13&#x2F;Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="准备动作1.在winserver2003上安装xampp经测试可以直接在winserver2003上安装xampp1.8.2版本并且正常运行 附下载网站： https:&#x2F;&#x2F;sourceforge.net&#x2F;projects&#x2F;xampp&#x2F;files&#x2F;XAMPP%20Windows&#x2F;1.8.2&#x2F; 2.调试xampp 开启xampp，点击start打开mysql。 点击Apache右边的config选择A">
 <meta property="og:locale" content="zh-CN">
@@ -200,18 +200,13 @@
 插入信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO users (username,password,email)</span><br><span class="line">VALUES(&apos;MarcoFly&apos;,&apos;test&apos;,&apos;marcofly@test.com&apos;);</span><br></pre></td></tr></table></figure>
 <h2 id="3-新建PHP文件"><a href="#3-新建PHP文件" class="headerlink" title="3.新建PHP文件"></a>3.新建PHP文件</h2>在C:\xampp\htdocs(xampp安装目录)下新建validate.php文件</li>
 </ol>
-<p>输入以下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;登录验证&lt;/title&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;validate.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        &lt;fieldset&gt;</span><br><span class="line">            &lt;legend&gt;Sql Injection&lt;/legend&gt;</span><br><span class="line">            &lt;table&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;username:&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;password&amp;nbsp;&amp;nbsp;:&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;reset&quot; value=&quot;reset&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/table&gt;</span><br><span class="line">        &lt;/fieldset&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">       $servername = &quot;localhost&quot;;</span><br><span class="line">       $username = &quot;root&quot;;</span><br><span class="line">       $password = &quot;&quot;;</span><br><span class="line">       $database=&apos;injection&apos;;</span><br><span class="line"></span><br><span class="line">       $conn=mysqli_connect($servername,$username,$password,$database) or die(&apos;Database connect failed!&apos;);</span><br><span class="line"></span><br><span class="line">       $name=$_POST[&apos;username&apos;];</span><br><span class="line"></span><br><span class="line">       $pwd=$_POST[&apos;password&apos;];</span><br><span class="line"></span><br><span class="line">       $sql=&quot;select * from users where username=&apos;$name&apos; and password=&apos;$pwd&apos;&quot;;</span><br><span class="line"></span><br><span class="line">       $query=mysqli_query($conn,$sql);</span><br><span class="line"></span><br><span class="line">       $arr=mysqli_fetch_array($query);</span><br><span class="line"></span><br><span class="line">       if(is_array($arr))&#123;</span><br><span class="line"></span><br><span class="line">               echo &quot;Database connect success! You are SQL injected!&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;else&#123;</span><br><span class="line"></span><br><span class="line">              echo &quot;Please enter the right username and password!&lt;a href=\&quot;Login.php\&quot;&gt;Please login again!&lt;/a&gt;&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="4-访问PHP文件"><a href="#4-访问PHP文件" class="headerlink" title="4.访问PHP文件"></a>4.访问PHP文件</h2><p>打开浏览器，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8010/validate.php</span><br></pre></td></tr></table></figure>
-<h2 id="5-测试SQL注入"><a href="#5-测试SQL注入" class="headerlink" title="5.测试SQL注入"></a>5.测试SQL注入</h2><p>在username一栏里面输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or 1=1#</span><br></pre></td></tr></table></figure>
-<p>如果输出Database connect success! You are SQL injected! 则被SQL注入</p>
+<p>输入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;登录验证&lt;/title&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;validate.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        &lt;fieldset&gt;</span><br><span class="line">            &lt;legend&gt;Sql Injection&lt;/legend&gt;</span><br><span class="line">            &lt;table&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;username:&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;password&amp;nbsp;&amp;nbsp;:&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type=&quot;reset&quot; value=&quot;reset&quot;&gt;&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/table&gt;</span><br><span class="line">        &lt;/fieldset&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">       $servername = &quot;localhost&quot;;</span><br><span class="line">       $username = &quot;root&quot;;</span><br><span class="line">       $password = &quot;&quot;;</span><br><span class="line">       $database=&apos;injection&apos;;</span><br><span class="line"></span><br><span class="line">       $conn=mysqli_connect($servername,$username,$password,$database) or die(&apos;Database connect failed!&apos;);</span><br><span class="line"></span><br><span class="line">       $name=$_POST[&apos;username&apos;];</span><br><span class="line"></span><br><span class="line">       $pwd=$_POST[&apos;password&apos;];</span><br><span class="line"></span><br><span class="line">       $sql=&quot;select * from users where username=&apos;$name&apos; and password=&apos;$pwd&apos;&quot;;</span><br><span class="line"></span><br><span class="line">       $query=mysqli_query($conn,$sql);</span><br><span class="line"></span><br><span class="line">       $arr=mysqli_fetch_array($query);</span><br><span class="line"></span><br><span class="line">       if(is_array($arr))&#123;</span><br><span class="line"></span><br><span class="line">               echo &quot;Database connect success! You are SQL injected!&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;else&#123;</span><br><span class="line"></span><br><span class="line">              echo &quot;Please enter the right username and password!&lt;a href=\&quot;Login.php\&quot;&gt;Please login again!&lt;/a&gt;&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-访问PHP文件"><a href="#4-访问PHP文件" class="headerlink" title="4.访问PHP文件"></a>4.访问PHP文件</h2><p>打开浏览器，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8010/validate.php</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-测试SQL注入"><a href="#5-测试SQL注入" class="headerlink" title="5.测试SQL注入"></a>5.测试SQL注入</h2><p>在username一栏里面输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos; or 1=1#</span><br></pre></td></tr></table></figure><br>如果输出Database connect success! You are SQL injected! 则被SQL注入</p>
 <h1 id="IIS6配置php文件"><a href="#IIS6配置php文件" class="headerlink" title="IIS6配置php文件"></a>IIS6配置php文件</h1><h2 id="1-下载并安装IIS-FastCGI"><a href="#1-下载并安装IIS-FastCGI" class="headerlink" title="1.下载并安装IIS FastCGI"></a>1.下载并安装IIS FastCGI</h2><p>下载地址：</p>
 <p><a href="http://www.iis.net/download/fastcgi" target="_blank" rel="noopener">http://www.iis.net/download/fastcgi</a></p>
 <p>选择 x86或者download x86，下载下来名称为 fcgisetup_1.5_rtw_x86.msi。安装后会在C:\WINDOWS\system32\inetsrv\目录下多出了5个文件fcgiconfig.js,fcgiext.dll,fcgiext.ini,fcgilicense.rtf,fcgireadme.htm<br>这个时候在IIS6的”WEB服务扩展”里就多出了一个FastCGI Handler</p>
-<h2 id="2-注册PHP到FastCGI"><a href="#2-注册PHP到FastCGI" class="headerlink" title="2.注册PHP到FastCGI"></a>2.注册PHP到FastCGI</h2><p>打开C:\WINDOWS\system32\inetsrv\fcgiext.ini文件，在文件最后加上下面的语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Types](此行为源文件自带部分)</span><br><span class="line">php=PHP</span><br><span class="line"></span><br><span class="line">[PHP]</span><br><span class="line">ExePath=C:\xampp\php\php-cgi.exe</span><br><span class="line">InstanceMaxRequests=10000</span><br><span class="line">ActivityTimeout=600</span><br><span class="line">RequestTimeout=600</span><br><span class="line">EnvironmentVars=PHP_FCGI_MAX_REQUESTS:10000,PHPRC:C:\xampp\php\</span><br></pre></td></tr></table></figure>
+<h2 id="2-注册PHP到FastCGI"><a href="#2-注册PHP到FastCGI" class="headerlink" title="2.注册PHP到FastCGI"></a>2.注册PHP到FastCGI</h2><p>打开C:\WINDOWS\system32\inetsrv\fcgiext.ini文件，在文件最后加上下面的语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Types](此行为源文件自带部分)</span><br><span class="line">php=PHP</span><br><span class="line"></span><br><span class="line">[PHP]</span><br><span class="line">ExePath=C:\xampp\php\php-cgi.exe</span><br><span class="line">InstanceMaxRequests=10000</span><br><span class="line">ActivityTimeout=600</span><br><span class="line">RequestTimeout=600</span><br><span class="line">EnvironmentVars=PHP_FCGI_MAX_REQUESTS:10000,PHPRC:C:\xampp\php\</span><br></pre></td></tr></table></figure></p>
 <h2 id="3-修改PHP的探针"><a href="#3-修改PHP的探针" class="headerlink" title="3.修改PHP的探针"></a>3.修改PHP的探针</h2><p>修改路径为C:\xampp\php\php.ini里面的</p>
 <p>short_open_tag = Off</p>
 <p>改为</p>
@@ -229,27 +224,24 @@
 <p>a）    输入错误账号密码</p>
 <p>username: dfa</p>
 <p>password: 123</p>
-<p>b）    IIS6日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:46:51 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1097 453 15</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<p>b）    IIS6日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:46:51 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1097 453 15</span><br></pre></td></tr></table></figure></p>
+<ol>
 <li>第二次输入账号密码</li>
 </ol>
 <p>a)    输入SQL注入账号</p>
 <p>username: ‘ or 1 = 1#</p>
 <p>password: 123</p>
-<p>b)    IIS6日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:47:52 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1056 468 15</span><br></pre></td></tr></table></figure>
-<ol start="3">
+<p>b)    IIS6日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:47:52 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1056 468 15</span><br></pre></td></tr></table></figure></p>
+<ol>
 <li>第三次输入账号密码</li>
 </ol>
 <p>a)    输入正确账号密码</p>
 <p>username: MarcoFly</p>
 <p>password: test</p>
-<p>b)    IIS6日志</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:49:11 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1056 460 15</span><br></pre></td></tr></table></figure>
+<p>b)    IIS6日志<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2019-11-13 08:49:11 W3SVC1 SXF-GJIC6CP9RLM 127.0.0.1 POST /validate.php - 80 - 127.0.0.1 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.2;+SV1;+.NET+CLR+1.1.4322) - http://localhost/validate.php localhost 200 0 0 1056 460 15</span><br></pre></td></tr></table></figure></p>
 <h1 id="初步结论"><a href="#初步结论" class="headerlink" title="初步结论"></a>初步结论</h1><p>无论是否输入正确和错误账号密码，还是输入SQL注入信息，IIS6给出的日志都是几乎一样无法分辨的，那么可以初步断定无法通过日志对IIS6是否被SQL注入进行检查。</p>
 <h1 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h1><p><a href="https://www.jb51.net/article/31384.htm" target="_blank" rel="noopener">https://www.jb51.net/article/31384.htm</a></p>
-<p><a href="https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/" target="_blank" rel="noopener">https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/</a></p>
+<p><a href="https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/">https://zyhhhy.github.io/2019/11/09/%E4%BB%8ESQL%E6%B3%A8%E5%85%A5%E8%AF%B4%E8%B5%B7/</a></p>
 <h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1>
                                             
                                                 
@@ -263,7 +255,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    http://120.79.219.131/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/
+                                                                                    https://zyhhhy.github.io/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -366,7 +358,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://120.79.219.131/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2019/11/13/Winserver2003%E4%B8%8AIIS6%E9%85%8D%E7%BD%AESQL%E6%B3%A8%E5%85%A5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -554,7 +546,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">复盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,15 +562,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">读后感</a>
+                <a href="javascript:void(0)" class="js-tag color3">电影</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,15 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">电影</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">演讲稿</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">时评文</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,7 +586,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">时评文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">游记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AI</a>
               </li>
             
             <div class="clearfix"></div>
@@ -738,9 +734,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
         <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
         <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-        <script type="text/javascript" src="/fireworks.js"></script>
+        <!-- <script type="text/javascript" src="/fireworks.js"></script> -->
 
         <script type="text/javascript" color="0, 0, 255" opacity="0.5" src="dist/canvas-nest.js"></script>
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ["$","$"], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], processEscapes: true } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(); for (var i = 0;
+    i
+    < all.length; ++i) all[i].SourceElement().parentNode.className +=' has-jax' ; }); </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 
     </html>
