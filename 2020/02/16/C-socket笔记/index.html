@@ -11,30 +11,30 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://120.79.219.131">
+  <link rel="dns-prefetch" href="https://zyhhhy.github.io">
   <title>C++socket笔记 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="socket是什么意思数据传输方式 SOCK_STREAM 和 SOCK_DGRAMSOCK_STREAM 表示面向连接的数据传输方式。准确但慢 SOCK_DGRAM 表示无连接的数据传输方式。快但可能错">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++socket笔记">
-<meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="socket是什么意思数据传输方式 SOCK_STREAM 和 SOCK_DGRAMSOCK_STREAM 表示面向连接的数据传输方式。准确但慢 SOCK_DGRAM 表示无连接的数据传输方式。快但可能错">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151026205304555.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15101Q60GV27.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020115S23R.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020132J32G.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110510394G48.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15102015224Wc.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZSA3309.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZT059560.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151110203SY49.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151026205304555.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15101Q60GV27.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020115S23R.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151020132J32G.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110510394G48.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15102015224Wc.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZSA3309.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-15110ZT059560.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151110203SY49.jpg">
 <meta property="og:updated_time" content="2020-02-16T02:34:23.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;02&#x2F;16&#x2F;C-socket%E7%AC%94%E8%AE%B0&#x2F;1-151012194503V5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -323,7 +323,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    http://120.79.219.131/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/
+                                                                                    https://zyhhhy.github.io/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -426,7 +426,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://120.79.219.131/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2020/02/16/C-socket%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
