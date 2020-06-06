@@ -11,34 +11,34 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://120.79.219.131">
+  <link rel="dns-prefetch" href="https://zyhhhy.github.io">
   <title>DETR论文解析 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="综述本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。 DETR是（detection transformer）取两个单词的前两个首字母结合。这个模型可以用于目标检测和全景分割，它在COCO数据集上面的AP超过现在基本上最主流的目标检测手段Faster RCNN。很重要的一点就是它把NLP自然语言处理使用比较多的transformer使用到了CV中，而且使用的比较灵巧。 目标检测常见问">
 <meta name="keywords" content="AI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DETR论文解析">
-<meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="综述本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。 DETR是（detection transformer）取两个单词的前两个首字母结合。这个模型可以用于目标检测和全景分割，它在COCO数据集上面的AP超过现在基本上最主流的目标检测手段Faster RCNN。很重要的一点就是它把NLP自然语言处理使用比较多的transformer使用到了CV中，而且使用的比较灵巧。 目标检测常见问">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062658814.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062917122.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606064730009.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606065305158.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606065518165.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591401612518.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591401787581.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402123884.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606081241383.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606081506660.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402537288.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402556686.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402676776.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062658814.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062917122.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606064730009.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606065305158.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606065518165.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591401612518.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591401787581.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402123884.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606081241383.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606081506660.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402537288.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402556686.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402676776.jpg">
 <meta property="og:updated_time" content="2020-06-06T00:36:13.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062658814.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062658814.png">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -284,7 +284,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    http://120.79.219.131/2020/06/06/DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90/
+                                                                                    https://zyhhhy.github.io/2020/06/06/DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -387,7 +387,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://120.79.219.131/2020/06/06/DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2020/06/06/DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -757,11 +757,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <!-- <script type="text/javascript" src="/fireworks.js"></script> -->
 
         <script type="text/javascript" color="0, 0, 255" opacity="0.5" src="dist/canvas-nest.js"></script>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ["$","$"], ["\\(","\\)"] ], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], processEscapes: true } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(); for (var i = 0;
-    i
-    < all.length; ++i) all[i].SourceElement().parentNode.className +=' has-jax' ; }); </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-</body>
+    </body>
 
     </html>
