@@ -14,13 +14,13 @@
   <link rel="dns-prefetch" href="http://120.79.219.131">
   <title>DETR论文解析 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="综述本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。 DETR是（detection transformer）取两个单词的前两个首字母结合。这个模型可以用于目标检测和全景分割，它在COCO数据集上面的AP超过现在基本上最主流的目标检测手段Faster RCNN。很重要的一点就是它把NLP自然语言处理使用比较多的transformer使用到了CV中，而且使用的比较灵巧。 目标检测常见问">
+  <meta name="description" content="综述本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。">
 <meta name="keywords" content="AI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DETR论文解析">
 <meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
-<meta property="og:description" content="综述本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。 DETR是（detection transformer）取两个单词的前两个首字母结合。这个模型可以用于目标检测和全景分割，它在COCO数据集上面的AP超过现在基本上最主流的目标检测手段Faster RCNN。很重要的一点就是它把NLP自然语言处理使用比较多的transformer使用到了CV中，而且使用的比较灵巧。 目标检测常见问">
+<meta property="og:description" content="综述本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062658814.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062917122.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402537288.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402556686.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;DETR论文分享_周耀海-1591402676776.jpg">
-<meta property="og:updated_time" content="2020-06-06T00:36:13.606Z">
+<meta property="og:updated_time" content="2020-06-28T14:01:30.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2020&#x2F;06&#x2F;06&#x2F;DETR%E8%AE%BA%E6%96%87%E8%A7%A3%E6%9E%90&#x2F;image-20200606062658814.png">
   
@@ -202,8 +202,8 @@
             
                 <div class="article-entry" itemprop="articleBody">
                     
-                                        <a id="more"></a>
-<h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p>本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。</p>
+                                        <h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p>本次分享我分享一篇5月份刚出的与目标检测相关的论文DETR。</p>
+<a id="more"></a>
 <p>DETR是（detection transformer）取两个单词的前两个首字母结合。这个模型可以用于目标检测和全景分割，它在COCO数据集上面的AP超过现在基本上最主流的目标检测手段Faster RCNN。很重要的一点就是它把NLP自然语言处理使用比较多的transformer使用到了CV中，而且使用的比较灵巧。</p>
 <h1 id="目标检测常见问题"><a href="#目标检测常见问题" class="headerlink" title="目标检测常见问题"></a>目标检测常见问题</h1><p>目标检测任务是从一张图片中用bounding box(bbox)画框，框出图中出现的目标，并且对其进行分类。</p>
 <p>以此图为例。图中有两只小鸟，我们就需要画出框并且给出“鸟”的类别。</p>
