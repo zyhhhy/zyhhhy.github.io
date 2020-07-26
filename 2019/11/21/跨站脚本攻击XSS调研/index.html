@@ -11,21 +11,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://120.79.219.131">
+  <link rel="dns-prefetch" href="https://zyhhhy.github.io">
   <title>跨站脚本攻击XSS调研 | 周耀海的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="跨站脚本攻击XSS调研一、    XSS概念跨站脚本攻击XSS（Cross Site Scripting），为了与CSS（层叠样式表）区分，故作XSS。  百度百科：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、Active">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨站脚本攻击XSS调研">
-<meta property="og:url" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;index.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;index.html">
 <meta property="og:site_name" content="周耀海的博客">
 <meta property="og:description" content="跨站脚本攻击XSS调研一、    XSS概念跨站脚本攻击XSS（Cross Site Scripting），为了与CSS（层叠样式表）区分，故作XSS。  百度百科：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java、 VBScript、Active">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;1.png">
 <meta property="og:updated_time" content="2019-11-21T08:41:44.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;120.79.219.131&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;1.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zyhhhy.github.io&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="周耀海的博客" type="application/atom+xml">
   
@@ -282,7 +282,7 @@
                                                                             
                                                                                     <br>
                                                                                     <strong>本文链接：</strong>
-                                                                                    http://120.79.219.131/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/
+                                                                                    https://zyhhhy.github.io/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/
                                                                                         <br>
                                                                                         <strong>版权声明：</strong> 本作品采用
                                                                                         <a rel="license" href="">
@@ -385,7 +385,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://120.79.219.131/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://zyhhhy.github.io/2019/11/21/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BBXSS%E8%B0%83%E7%A0%94/" alt="微信分享二维码">
     </div>
 </div>
 
